@@ -29,7 +29,7 @@ int main()
 
 void PrintIntro()
 {
-	std::cout << "Added From Second Computer" << std::endl;
+	
 	std::cout << "Welcome To Bulls And Cows,A Fun Word Game." << std::endl;
 	std::cout << "Can You Guess The " << BCGame.GetHiddenWordLength() << " Letter Isogram I'm Thinking Of?" << std::endl;
 
