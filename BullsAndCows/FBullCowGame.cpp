@@ -3,11 +3,15 @@
 
 
 
-void FBullCowGame::Reset()
+void FBullCowGame::Reset(int Difficulty)
 {
 	CurrentTry = 1;
-	const FString HIDDEN_WORD = "planet";
-	HiddenWord = HIDDEN_WORD;
+	FWord* Words[5];
+	for (int i = 0; i < 5; i++)
+	{
+		Words[i]->GenerateWord(Difficulty);
+	}
+	
 	bGameWon = false;
 	return;
 }
@@ -17,8 +21,20 @@ FBullCowGame::FBullCowGame()
 	Reset();
 }
 
-void FBullCowGame::SetGameDifficulty(int Difficulty)
-{	GameDifficulty = Difficulty;}
+void FBullCowGame::SetMaxTries(int Difficulty)
+{
+	if (Difficulty == 0)
+		MaxTries = 8;
+	else if (Difficulty == 1)
+		MaxTries = 7;
+	else if (Difficulty == 2)
+		MaxTries = 6;
+	else if (Difficulty == 3)
+		MaxTries = 5;
+}
+
+int32 FBullCowGame::GetMaxTries() const
+{	return MaxTries;}
 
 int32 FBullCowGame::GetCurrentTry() const
 {	return CurrentTry;}

@@ -14,6 +14,8 @@ struct FBullCowCount
 };
 
 
+
+
 enum class EWordStatus
 {
 	Invalid_Status,
@@ -39,19 +41,19 @@ public:
 	
 	EWordStatus CheckValidGuess(FString) const;
 	
-	void Reset();	
+	void Reset(int Difficulty);	
 	FBullCowCount SubmitValidGuess(FString);
 
 
 	//Setters
 
-	void SetGameDifficulty(int Difficulty);
+	void SetMaxTries(int Difficulty);
 
 
 
 private:
 	int32 CurrentTry;
-	int32 GameDifficulty;
+	int32 MaxTries;
 	FString HiddenWord;
 	bool bGameWon;
 

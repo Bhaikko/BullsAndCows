@@ -1,8 +1,7 @@
 #include "FWord.h"
 
 FWord::FWord()
-{
-	FWord* Words[4][26];
+{	
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 26; j++)
@@ -654,4 +653,10 @@ FWord::FWord()
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
+}
+
+FWord* FWord::GenerateWord(int Difficulty)
+{
+	int WordIndex = rand() % 5;
+	return Words[WordIndex][Difficulty];
 }
