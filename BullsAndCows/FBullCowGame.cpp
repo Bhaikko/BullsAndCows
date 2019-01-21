@@ -6,7 +6,7 @@
 void FBullCowGame::Reset(int Difficulty)
 {
 	CurrentTry = 1;
-	FWord* Words[5];
+	
 	for (int i = 0; i < 5; i++)
 	{
 		Words[i]->GenerateWord(Difficulty);
@@ -16,9 +16,9 @@ void FBullCowGame::Reset(int Difficulty)
 	return;
 }
 
-FBullCowGame::FBullCowGame()
+FBullCowGame::FBullCowGame(int Difficulty)
 {
-	Reset();
+	Reset(Difficulty);
 }
 
 void FBullCowGame::SetMaxTries(int Difficulty)

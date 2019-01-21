@@ -6,13 +6,12 @@
 using FText = std::string;
 using int32 = int;
 
-void PrintIntro();
-void PlayGame();
-FText GetValidGuess();
-bool AskToPlayAgain();
-FBullCowGame BCGame;
-void printGameSummary();
+FBullCowGame* BCGame;
+
 void Game();
+void PrintIntro();
+bool AskToPlayAgain();
+void PlayGame(int Difficulty);
 
 int main()
 {
@@ -36,24 +35,7 @@ void Game()
 }
 
 
-void PlayGame()
-{
-	system("cls");
-	BCGame.Reset(Difficulty);
 
-
-	int32 MaxTries=BCGame.GetMaxTries();
-	while(!BCGame.IsGameWon()&&BCGame.GetCurrentTry()<=BCGame.GetMaxTries())
-	{
-		FText GUESS = GetValidGuess();
-		FBullCowCount Count = BCGame.SubmitValidGuess(GUESS);
-		std::cout << "The Guess Word Is :"<< GUESS << std::endl;
-		std::cout << "Bulls :" << Count.Bulls << " . Cows: " << Count.Cows << std::endl << std::endl;
-	}
-	printGameSummary();
-	return;	
-
-}
 void ChoiceInput()
 {
 	int Choice;
@@ -72,7 +54,7 @@ void ChoiceInput()
 }
 void printGameSummary()
 {
-	if (BCGame.IsGameWon())
+	if (BCGame->IsGameWon())
 		std::cout << "You Won!!" << std::endl;
 	else
 		std::cout << "Better Luck Next Time." << std::endl;
@@ -86,14 +68,14 @@ FText GetValidGuess()
 	do
 	{
 		
-		std::cout << "Try " << BCGame.GetCurrentTry()<<" of "<<BCGame.GetMaxTries() << " Enter Your Guess: ";
+		std::cout << "Try " << BCGame->GetCurrentTry()<<" of "<<BCGame->GetMaxTries() << " Enter Your Guess: ";
 		getline(std::cin, GUESS);
 
-		Status = BCGame.CheckValidGuess(GUESS);
+		Status = BCGame->CheckValidGuess(GUESS);
 		switch (Status)
 		{
 		case EWordStatus::Wrong_Length:
-			std::cout << "Please Enter A " << BCGame.GetHiddenWordLength() << " letter Word. " << std::endl << std::endl;
+			std::cout << "Please Enter A " << BCGame->GetHiddenWordLength() << " letter Word. " << std::endl << std::endl;
 			break;
 		case EWordStatus::Not_Isogram:
 			std::cout << "Please Enter A Word Without Repeating Letters " << std::endl<<std::endl;
@@ -157,6 +139,20 @@ void Credits()
 
 }
 
+int Difficulty()
+{
+	std::cout << "Choose Difficulty" << std::endl;
+	int32 Choice;
+	std::cout << "1. Noob :(" << std::endl;
+	std::cout << "2. I'm Getting Hang Of This :|" << std::endl;
+	std::cout << "3. Alright,This Seems Easy :D" << std::endl;
+	std::cout << "4. Pro B)" << std::endl;
+
+	std::cin >> Choice;
+	return Choice;
+
+}
+
 
 
 void PrintIntro()
@@ -173,11 +169,15 @@ void PrintIntro()
 
 	int Choice;
 	std::cin >> Choice;
+	
+	int GameDifficulty;
 
 	switch (Choice)
 	{
 	case 1:
-		PlayGame();
+		GameDifficulty = Difficulty();
+		BCGame = new FBullCowGame(GameDifficulty);
+		PlayGame(GameDifficulty);
 		break;
 
 	case 2:
@@ -200,6 +200,24 @@ void PrintIntro()
 
 
 	std::cout << std::endl;
+	return;
+
+}
+void PlayGame(int Difficulty)
+{
+	system("cls");
+	BCGame->Reset(Difficulty);
+
+
+	int32 MaxTries = BCGame->GetMaxTries();
+	while (!BCGame->IsGameWon() && BCGame->GetCurrentTry() <= BCGame->GetMaxTries())
+	{
+		FText GUESS = GetValidGuess();
+		FBullCowCount Count = BCGame->SubmitValidGuess(GUESS);
+		std::cout << "The Guess Word Is :" << GUESS << std::endl;
+		std::cout << "Bulls :" << Count.Bulls << " . Cows: " << Count.Cows << std::endl << std::endl;
+	}
+	printGameSummary();
 	return;
 
 }

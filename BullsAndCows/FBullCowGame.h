@@ -28,7 +28,7 @@ enum class EWordStatus
 class FBullCowGame
 {
 public:
-	FBullCowGame();
+	FBullCowGame(int Difficulty);
 
 	//Getters
 	int32 GetMaxTries() const;
@@ -56,6 +56,7 @@ private:
 	int32 MaxTries;
 	FString HiddenWord;
 	bool bGameWon;
+	FWord* Words[5];
 
 	bool IsIsogram(FString) const;
 	bool IsLowercase(FString) const;
