@@ -1,5 +1,6 @@
 #pragma once
 #include<string>
+#include"FWord.h"
 #include<map>
 #define Tmap std::map
 
@@ -11,6 +12,7 @@ struct FBullCowCount
 	int32 Bulls = 0;
 	int32 Cows = 0;
 };
+
 
 enum class EWordStatus
 {
@@ -26,9 +28,12 @@ class FBullCowGame
 public:
 	FBullCowGame();
 
+	//Getters
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
 	int32 GetHiddenWordLength() const;
+	
+	
 
 	bool IsGameWon() const;
 	
@@ -38,11 +43,16 @@ public:
 	FBullCowCount SubmitValidGuess(FString);
 
 
+	//Setters
+
+	void SetGameDifficulty(int Difficulty);
+
 
 
 private:
-	int32 MyCurrentTry;
-	FString MyHiddenWord;
+	int32 CurrentTry;
+	int32 GameDifficulty;
+	FString HiddenWord;
 	bool bGameWon;
 
 	bool IsIsogram(FString) const;
