@@ -1,24 +1,20 @@
 #include "FBullCowGame.h"
 
 
-
-
-void FBullCowGame::Reset(int Difficulty)
-{
-	CurrentTry = 1;
-	
-	for (int i = 0; i < 5; i++)
-	{
-		Words[i]->GenerateWord(Difficulty);
-	}
-	
-	bGameWon = false;
-	return;
-}
-
 FBullCowGame::FBullCowGame(int Difficulty)
 {
-	Reset(Difficulty);
+	CurrentTry = 1;
+	Score = 0;
+	CurrentWordIndex = 0;
+
+	WordObject = new FWord;
+
+	for (int i = 0; i < 5; i++)
+		Words[i] = WordObject->GenerateWord(Difficulty);
+
+	HiddenWord = Words[CurrentWordIndex];
+
+	return;
 }
 
 void FBullCowGame::SetMaxTries(int Difficulty)
@@ -33,21 +29,19 @@ void FBullCowGame::SetMaxTries(int Difficulty)
 		MaxTries = 5;
 }
 
-int32 FBullCowGame::GetMaxTries() const
+int FBullCowGame::GetMaxTries() const
 {	return MaxTries;}
 
-int32 FBullCowGame::GetCurrentTry() const
+int FBullCowGame::GetCurrentTry() const
 {	return CurrentTry;}
 
-bool FBullCowGame::IsGameWon() const
-{	return bGameWon;}
 
-bool FBullCowGame::IsIsogram(FString Word) const
+bool FBullCowGame::IsIsogram(std::string Word) const
 {
 	if (Word.length() <= 1)
 		return true;
-
-	Tmap<char, int> LetterSeen;
+	
+	std::map<char, int> LetterSeen;
 	for (auto Letter : Word)
 	{
 		Letter = tolower(Letter);
@@ -60,7 +54,7 @@ bool FBullCowGame::IsIsogram(FString Word) const
 	return true;
 }
 
-bool FBullCowGame::IsLowercase(FString Word) const
+bool FBullCowGame::IsLowercase(std::string Word) const
 {
 	for (auto Letter : Word)
 	{
@@ -70,7 +64,7 @@ bool FBullCowGame::IsLowercase(FString Word) const
 	return true;
 }
 
-EWordStatus FBullCowGame::CheckValidGuess(FString GuessWord) const
+EWordStatus FBullCowGame::CheckValidGuess(std::string GuessWord) const
 {
 	if (!IsIsogram(GuessWord))
 	{
@@ -86,22 +80,23 @@ EWordStatus FBullCowGame::CheckValidGuess(FString GuessWord) const
 		return EWordStatus::OK;
 }
 
-int32 FBullCowGame::GetHiddenWordLength() const
+int FBullCowGame::GetHiddenWordLength() const
 {
-	return HiddenWord.length();
+	return HiddenWord->GetWord().length();
 }
 
-FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
+FBullCowCount FBullCowGame::SubmitValidGuess(std::string Guess)
 {
 	CurrentTry++;
 	FBullCowCount BullCowCount;
 	
-	const int HiddenWordLength = HiddenWord.length();
-	for (int32 i = 0; i < HiddenWordLength; i++)
+	const int HiddenWordLength = HiddenWord->GetWord().length();
+	for (int i = 0; i < HiddenWordLength; i++)
 	{
-		for (int32 j = 0; j < HiddenWordLength; j++)
+		for (int j = 0; j < HiddenWordLength; j++)
 		{
-			if (Guess[i] == HiddenWord[j])
+			auto Word= HiddenWord->GetWord();
+			if (Guess[i] == Word[j])
 			{
 				if (i == j)
 					BullCowCount.Bulls++;
@@ -111,9 +106,18 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 			}
 		}
 	}
-	if (BullCowCount.Bulls == HiddenWordLength)
-		bGameWon = true;
-
 
 	return BullCowCount;
 }
+FWord* FBullCowGame::GetCurrentWord()
+{
+	return HiddenWord;
+}
+
+void FBullCowGame::NextWord()
+{
+	CurrentWordIndex++;
+	HiddenWord = Words[CurrentWordIndex];
+	CurrentTry = 0;
+}
+

@@ -2,19 +2,13 @@
 #include<string>
 #include"FWord.h"
 #include<map>
-#define Tmap std::map
 
-using FString = std::string;
-using int32 = int;
 
 struct FBullCowCount
 {
-	int32 Bulls = 0;
-	int32 Cows = 0;
+	int Bulls = 0;
+	int Cows = 0;
 };
-
-
-
 
 enum class EWordStatus
 {
@@ -27,37 +21,42 @@ enum class EWordStatus
 
 class FBullCowGame
 {
+private:
+	int CurrentTry;
+	int CurrentWordIndex;
+	int MaxTries;
+	int Score;
+	
+	FWord* WordObject;
+	FWord* Words[5];
+	FWord* HiddenWord;
+
+	bool IsIsogram(std::string) const;
+	bool IsLowercase(std::string) const;
+
 public:
 	FBullCowGame(int Difficulty);
 
 	//Getters
-	int32 GetMaxTries() const;
-	int32 GetCurrentTry() const;
-	int32 GetHiddenWordLength() const;
-	
+	int GetMaxTries() const;
+	int GetCurrentTry() const;
+	int GetHiddenWordLength() const;
 	
 
-	bool IsGameWon() const;
-	
-	EWordStatus CheckValidGuess(FString) const;
-	
-	void Reset(int Difficulty);	
-	FBullCowCount SubmitValidGuess(FString);
 
+	EWordStatus CheckValidGuess(std::string) const;
+	FBullCowCount SubmitValidGuess(std::string);
+
+	void NextWord();
+
+
+	FWord* GetCurrentWord();
+
+	
 
 	//Setters
 
 	void SetMaxTries(int Difficulty);
 
 
-
-private:
-	int32 CurrentTry;
-	int32 MaxTries;
-	FString HiddenWord;
-	bool bGameWon;
-	FWord* Words[5];
-
-	bool IsIsogram(FString) const;
-	bool IsLowercase(FString) const;
 };

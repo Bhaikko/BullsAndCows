@@ -1,10 +1,18 @@
 #include "FWord.h"
 
 FWord::FWord()
+{
+	Word = "";
+	WordLength = 0;
+	Hint = "";
+	Award = "";
+}
+
+void FWord::DataInitialisation()
 {	
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < 26; j++)
+		for (int j = 0; j < 5; j++)
 			Words[i][j] = new FWord;
 	}
 	int Row = 0;
@@ -42,6 +50,7 @@ FWord::FWord()
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
 
+	
 	Words[Row][Col]->Word = "age";
 	Words[Row][Col]->WordLength = Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
@@ -173,6 +182,7 @@ FWord::FWord()
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
+	
 
 	//Difficulty 1
 	Row++;
@@ -208,6 +218,7 @@ FWord::FWord()
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
 
+	
 	Words[Row][Col]->Word = "brag";
 	Words[Row][Col]->WordLength = Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
@@ -333,7 +344,7 @@ FWord::FWord()
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
-
+	
 	//Difficulty 2
 	Row++;
 	Col = 0;
@@ -368,6 +379,7 @@ FWord::FWord()
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
 
+	
 	Words[Row][Col]->Word = "magic";
 	Words[Row][Col]->WordLength = Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
@@ -493,7 +505,7 @@ FWord::FWord()
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
-
+	
 	//Difficulty 3
 	Row++;
 	Col = 0;
@@ -527,7 +539,7 @@ FWord::FWord()
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
-
+	
 	Words[Row][Col]->Word = "forarms";
 	Words[Row][Col]->WordLength = Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
@@ -653,10 +665,26 @@ FWord::FWord()
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
+	
 }
 
 FWord* FWord::GenerateWord(int Difficulty)
 {
 	int WordIndex = rand() % 5;
-	return Words[WordIndex][Difficulty];
+	return Words[Difficulty][WordIndex];
+}
+
+std::string FWord::GetWord() const
+{
+	return Word;
+}
+
+std::string FWord::GetAward() const
+{
+	return Award;
+}
+
+std::string FWord::GetHint() const
+{
+	return Hint;
 }
