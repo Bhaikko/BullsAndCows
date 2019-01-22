@@ -27,12 +27,16 @@ private:
 	int MaxTries;
 	int Score;
 	
-	FWord* WordObject;
-	FWord* Words[5];
+	FWord* Words[4][26];
+	FWord* GameWords[5];
 	FWord* HiddenWord;
 
 	bool IsIsogram(std::string) const;
 	bool IsLowercase(std::string) const;
+
+	void DataInitialisation();
+	FWord* GenerateWord(int Difficulty);
+	void SetMaxTries(int Difficulty);
 
 public:
 	FBullCowGame(int Difficulty);
@@ -41,22 +45,11 @@ public:
 	int GetMaxTries() const;
 	int GetCurrentTry() const;
 	int GetHiddenWordLength() const;
-	
-
-
 	EWordStatus CheckValidGuess(std::string) const;
 	FBullCowCount SubmitValidGuess(std::string);
 
 	void NextWord();
 
-
 	FWord* GetCurrentWord();
-
-	
-
-	//Setters
-
-	void SetMaxTries(int Difficulty);
-
 
 };

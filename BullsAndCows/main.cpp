@@ -10,6 +10,11 @@ int Difficulty();
 void Help();
 void Credits();
 
+void Debug()
+{
+	std::cout << "Inside" << std::endl;
+}
+
 void ChoiceInput()
 {
 	int Choice;
@@ -30,17 +35,19 @@ void ChoiceInput()
 void PlayGame(int Difficulty)
 {
 	system("cls");
+	
 	int CurrentLevel = 1;
 	bool bWordShown = false;
 	while(CurrentLevel<=5&&BCGame->GetCurrentTry()<BCGame->GetMaxTries())
 	{
+		//Debug();
 		if (!bWordShown)
 		{
-			std::cout << BCGame->GetCurrentWord()->GetHint() << std::endl;;
+			std::cout << BCGame->GetCurrentWord()->Hint << std::endl;;
 			bWordShown = true;
 		}
 		std::string Guess=GetValidGuess();
-		if (Guess == BCGame->GetCurrentWord()->GetWord())
+		if (Guess == BCGame->GetCurrentWord()->Word)
 		{
 			std::cout << "Well Done!!" << std::endl;
 			std::cout << "You've Passed Level " << CurrentLevel << " Of 5 Levels";
@@ -80,12 +87,11 @@ void PrintIntro()
 	std::cin >> Choice;
 
 	int GameDifficulty;
-
 	switch (Choice)
 	{
 	case 1:
 		GameDifficulty = Difficulty();
-		BCGame = new FBullCowGame(GameDifficulty);
+		BCGame = new FBullCowGame(GameDifficulty);		
 		PlayGame(GameDifficulty);
 		break;
 
@@ -162,8 +168,8 @@ std::string GetValidGuess()
 	do
 	{
 		std::cout << "Try " << BCGame->GetCurrentTry() << " of " << BCGame->GetMaxTries() << " Enter Your Guess: ";
-		getline(std::cin, GUESS);
 
+		std::cin >> GUESS;
 		Status = BCGame->CheckValidGuess(GUESS);
 		switch (Status)
 		{
