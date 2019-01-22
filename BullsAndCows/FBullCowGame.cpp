@@ -3,7 +3,6 @@
 
 FBullCowGame::FBullCowGame(int Difficulty)
 {	
-	//std::cout << "YO" << std::endl;
 	CurrentTry = 1;
 	SetMaxTries(Difficulty);
 	Score = 0;
@@ -39,164 +38,164 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "pro";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro.";
 	Col++;
 
 	Words[Row][Col]->Word = "mar";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Used As Shortform For Month March";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Award = "Did You Know?! According to the oldest Roman calendars, one year was ten months long, beginning in March and ending in December.";
 	Col++;
 
 	Words[Row][Col]->Word = "car";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "A Four Wheeler";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Award = "Did You Know?! About 165,000 cars are produced every day.";
 	Col++;
 
 	Words[Row][Col]->Word = "mac";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Apple Product";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Award = "Did You Know?! Apple Max Was Found on April Fool's Day 1976.";
 	Col++;
 
 	Words[Row][Col]->Word = "did";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = " ";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Past Of 'Do'";
+	Words[Row][Col]->Award = "Did You Know?! There is a disorder called Dissociative Identitiy Disorder (DID)";
 	Col++;
 
 
 	Words[Row][Col]->Word = "age";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "What Variable of Life Goes Under Year++";
+	Words[Row][Col]->Award = "Did You Know?! Jeanne Calment Of France Lived For 122 Years, The Only Woman Who Told Her Age Proudly";
 	Col++;
 
 	Words[Row][Col]->Word = "era";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A Long And Distinct Period Of History.";
+	Words[Row][Col]->Award = "Did You Know?! 2014 Was An Era Of Cyber Attacks, I Mean Most Virtual Damage To Companies Was Done in this Year";
 	Col++;
 
 	Words[Row][Col]->Word = "sir";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "And Then An Army Officer Shouted, '___ Yes ___'";
+	Words[Row][Col]->Award = "Did You Know?! GTA Vice City Had A Mission called 'Sir,Yes,Sir' in which you blew up whole city with a stolen tank, Memories!!";
 	Col++;
 
 	Words[Row][Col]->Word = "lag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "I Died In the game because of the STUPID ___";
+	Words[Row][Col]->Award = "Did You Know?! There Is a disease called jet lag having no cure";
 	Col++;
 
 	Words[Row][Col]->Word = "ash";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "'I was chokin' in the crowd, Building my rain up in the cloud, Falling like ___ to the ground--Imagine Dragons,Believer'";
+	Words[Row][Col]->Award = "Did You Know?! Ash Ketchum From Pokemon is known as Satoshi in Japan";
 	Col++;
 
 	Words[Row][Col]->Word = "ego";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Reciprocal Of Knowledge(Starts With e)";
+	Words[Row][Col]->Award = "Did You Know?! Ego Starts To Develop in human when he/she is only 3 years old";
 	Col++;
 
 	Words[Row][Col]->Word = "god";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "'You Don't Fuck With The ___'(Singular)-Mundus, Devil May Cry";
+	Words[Row][Col]->Award = "Who Am I To Write A Fact About God Anyway";
 	Col++;
 
 	Words[Row][Col]->Word = "jam";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Bread And ___";
+	Words[Row][Col]->Award = "Jam neither is Considered as Solid nor Liquid but Condiment";
 	Col++;
 
 	Words[Row][Col]->Word = "air";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "We Breathe It Everyday";
+	Words[Row][Col]->Award = "It Keeps Us Alive xD";
 	Col++;
 
 	Words[Row][Col]->Word = "oil";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Hair___, we apply it on our Hair";
+	Words[Row][Col]->Award = "Did You know?! Only 50% Of Crude oil is converted into fuel";
 	Col++;
 
 	Words[Row][Col]->Word = "art";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "class 12 stream Humanities other name but without 's' in the end";
+	Words[Row][Col]->Award = "Did You Know?! Art used to be an olmypic event";
 	Col++;
 
 	Words[Row][Col]->Word = "git";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "___hub, software engineer's hub where they share source codes";
+	Words[Row][Col]->Award = "Git Comfortable with using Git, Git it??";
 	Col++;
 
 	Words[Row][Col]->Word = "get";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "___ set go!!";
+	Words[Row][Col]->Award = "Did You Know?! go is the smallest sentence one could make";
 	Col++;
 
 	Words[Row][Col]->Word = "rat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Very legendary, that’s some matter-of-fact shit,You're the opposite of stars like '___' spelled backwards--Lift Off,Mike Shinodea";
+	Words[Row][Col]->Award = "Did You Know?! Rats take care of injured and sick rats in their group.";
 	Col++;
 
 	Words[Row][Col]->Word = "sat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "shortform used for saturday";
+	Words[Row][Col]->Award = "Did You Know?! Saturday takes it name from Saturn, the Romah god of generation,dissolution,plenty,wealth and liberation";
 	Col++;
 
 	Words[Row][Col]->Word = "gum";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
+	Words[Row][Col]->Hint = "Chewing ___";
 	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
 	Col++;
 
 	Words[Row][Col]->Word = "mug";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Award = "Did You Know?! Kids in North America spend approximately half a billion dollars on bubble gum every year.";
 	Col++;
 
 	Words[Row][Col]->Word = "tar";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Used To Make Roads, sticky substance";
+	Words[Row][Col]->Award = "Dis You Know?! The last puffs on a cigarette can contain as much as twice the amount of tar as the first puffs";
 	Col++;
 
 	Words[Row][Col]->Word = "gym";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "1st January its Full,2nd January no one shows up";
+	Words[Row][Col]->Award = "Google+ is the gym of social networking, We all join, but nobody actually uses it. LAUGH GOD DAMNIT";
 	Col++;
 
 	Words[Row][Col]->Word = "gay";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "My Roommate Loves me, Who is he??";
+	Words[Row][Col]->Award = "Gay Actually means 'Happy', I read it in my 7 standard english textbook";
 	Col++;
 
-	Words[Row][Col]->Word = "gym";
+	Words[Row][Col]->Word = "wow";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Worlds of wonder???";
+	Words[Row][Col]->Award = "Did You Know?! I had no award for the Word WOW, wow!!";
 	Col++;
 
 	Words[Row][Col]->Word = "zig";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "___ zag";
+	Words[Row][Col]->Award = "I litreally gave up at this word for thinking a fact for zig zag, i mean come on, i have to hard code 4(Difficulty)*26(words) description";
 	Col++;
 
 
@@ -785,6 +784,6 @@ void FBullCowGame::NextWord()
 {
 	CurrentWordIndex++;
 	HiddenWord = GameWords[CurrentWordIndex];
-	CurrentTry = 0;
+	CurrentTry = 1;
 }
 

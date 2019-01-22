@@ -50,6 +50,7 @@ void PlayGame(int Difficulty)
 		if (Guess == BCGame->GetCurrentWord()->Word)
 		{
 			std::cout << "Well Done!!" << std::endl;
+			std::cout << BCGame->GetCurrentWord()->Award << std::endl;
 			std::cout << "You've Passed Level " << CurrentLevel << " Of 5 Levels";
 			CurrentLevel++;
 			BCGame->NextWord();
