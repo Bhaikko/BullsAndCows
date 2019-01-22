@@ -34,7 +34,7 @@ void ChoiceInput()
 
 void PlayGame(int Difficulty)
 {
-	system("cls");
+	//system("cls");
 	
 	int CurrentLevel = 1;
 	bool bWordShown = false;
@@ -149,7 +149,7 @@ void Credits()
 
 int Difficulty()
 {
-	system("cls");
+	//system("cls");
 	std::cout << "Choose Difficulty" << std::endl;
 	int Choice;
 	std::cout << "1. Noob :(" << std::endl;

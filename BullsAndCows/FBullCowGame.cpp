@@ -1,6 +1,5 @@
 #include "FBullCowGame.h"
 
-
 FBullCowGame::FBullCowGame(int Difficulty)
 {	
 	CurrentTry = 1;
@@ -16,15 +15,19 @@ FBullCowGame::FBullCowGame(int Difficulty)
 	}
 	DataInitialisation();
 	GenerateWord(Difficulty);
+
 	for (int i = 1; i <= 5; i++)
+	{
 		GameWords[i - 1] = GenerateWord(Difficulty);
-	
+	}
 	HiddenWord = GameWords[CurrentWordIndex];
 	return;
 }
 FWord* FBullCowGame::GenerateWord(int Difficulty)
 {
-	int WordIndex = rand() % 26;
+	
+	int WordIndex = std::rand() % 26;
+	
 	return Words[Difficulty - 1][WordIndex];
 }
 
@@ -186,9 +189,9 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Award = "Gay Actually means 'Happy', I read it in my 7 standard english textbook";
 	Col++;
 
-	Words[Row][Col]->Word = "wow";
+	Words[Row][Col]->Word = "gun";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Worlds of wonder???";
+	Words[Row][Col]->Hint = "I'm sorry for everything, Oh, everything I've done, From the second that I was born it seems I had a loaded ___, And then I shot, shot, shot a hole through everything I loved";
 	Words[Row][Col]->Award = "Did You Know?! I had no award for the Word WOW, wow!!";
 	Col++;
 
