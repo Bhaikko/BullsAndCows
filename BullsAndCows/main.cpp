@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
+//#include "Record.h"
 
 FBullCowGame* BCGame;
+//Record* Records;
 
 void PrintIntro();
 std::string GetValidGuess();
@@ -34,16 +36,15 @@ void ChoiceInput()
 
 void PlayGame(int Difficulty)
 {
-	//system("cls");
+	system("cls");
 	
 	int CurrentLevel = 1;
 	bool bWordShown = false;
 	while(CurrentLevel<=5&&BCGame->GetCurrentTry()<BCGame->GetMaxTries())
 	{
-		//Debug();
 		if (!bWordShown)
 		{
-			std::cout << BCGame->GetCurrentWord()->Hint << std::endl;;
+			std::cout << "Hint:" << BCGame->GetCurrentWord()->Hint << std::endl;
 			bWordShown = true;
 		}
 		std::string Guess=GetValidGuess();
@@ -51,24 +52,34 @@ void PlayGame(int Difficulty)
 		{
 			std::cout << "Well Done!!" << std::endl;
 			std::cout << BCGame->GetCurrentWord()->Award << std::endl;
-			std::cout << "You've Passed Level " << CurrentLevel << " Of 5 Levels";
+			std::cout << "You've Passed Level " << CurrentLevel << " Of 5 Levels" << std::endl;
 			CurrentLevel++;
+
+			int Award = BCGame->GetMaxTries() - BCGame->GetCurrentTry() + 1;
+			BCGame->AddScore(Award*BCGame->GetScoreToAdd());
+
 			BCGame->NextWord();
 			bWordShown = false;
+
+			
 			
 		}
 		else if (BCGame->GetCurrentTry() == BCGame->GetMaxTries())
 		{
 			std::cout << "Better Luck Next Time" << std::endl;
-			//EvaluateScore();
-			return;
+			break;
 		}
 		else
 		{
 			FBullCowCount Result = BCGame->SubmitValidGuess(Guess);
 			std::cout << "Bull: " << Result.Bulls << " Cows: " << Result.Cows << std::endl;
 		}
+		std::cout << std::endl;
+
 	}
+	
+	std::cout << "Press 9 For Menu." << std::endl;
+	ChoiceInput();
 	//EvaluateScore();
 
 }
@@ -149,7 +160,7 @@ void Credits()
 
 int Difficulty()
 {
-	//system("cls");
+	system("cls");
 	std::cout << "Choose Difficulty" << std::endl;
 	int Choice;
 	std::cout << "1. Noob :(" << std::endl;

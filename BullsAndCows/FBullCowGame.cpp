@@ -14,7 +14,6 @@ FBullCowGame::FBullCowGame(int Difficulty)
 	
 	}
 	DataInitialisation();
-	GenerateWord(Difficulty);
 
 	for (int i = 1; i <= 5; i++)
 	{
@@ -24,8 +23,7 @@ FBullCowGame::FBullCowGame(int Difficulty)
 	return;
 }
 FWord* FBullCowGame::GenerateWord(int Difficulty)
-{
-	
+{	
 	int WordIndex = std::rand() % 26;
 	
 	return Words[Difficulty - 1][WordIndex];
@@ -689,13 +687,25 @@ void FBullCowGame::DataInitialisation()
 void FBullCowGame::SetMaxTries(int Difficulty)
 {
 	if (Difficulty == 1)
+	{
 		MaxTries = 8;
+		ScoreToAdd = 10;
+	}		
 	else if (Difficulty == 2)
+	{
 		MaxTries = 7;
+		ScoreToAdd = 20;
+	}
 	else if (Difficulty == 3)
+	{
 		MaxTries = 6;
+		ScoreToAdd = 30;
+	}
 	else if (Difficulty == 4)
+	{
 		MaxTries = 5;
+		ScoreToAdd = 50;
+	}
 }
 
 int FBullCowGame::GetMaxTries() const
@@ -764,7 +774,7 @@ FBullCowCount FBullCowGame::SubmitValidGuess(std::string Guess)
 	{
 		for (int j = 0; j < HiddenWordLength; j++)
 		{
-			auto Word= HiddenWord->Word;
+			auto Word = HiddenWord->Word;
 			if (Guess[i] == Word[j])
 			{
 				if (i == j)
@@ -790,3 +800,12 @@ void FBullCowGame::NextWord()
 	CurrentTry = 1;
 }
 
+void FBullCowGame::AddScore(int Score)
+{
+	this->Score += Score;
+}
+
+int FBullCowGame::GetScoreToAdd()
+{
+	return ScoreToAdd;
+}

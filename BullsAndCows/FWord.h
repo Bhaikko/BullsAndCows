@@ -13,11 +13,6 @@ public:
 	std::string Hint;
 	std::string Award;
 
-	
-
-
-	
-	
 };
 
 

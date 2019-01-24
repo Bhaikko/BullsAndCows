@@ -121,10 +121,12 @@
     <ClCompile Include="FBullCowGame.cpp" />
     <ClCompile Include="FWord.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Record.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FBullCowGame.h" />
     <ClInclude Include="FWord.h" />
+    <ClInclude Include="Record.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,6 +10,9 @@ struct FBullCowCount
 	int Cows = 0;
 };
 
+
+
+
 enum class EWordStatus
 {
 	Invalid_Status,
@@ -26,6 +29,7 @@ private:
 	int CurrentWordIndex;
 	int MaxTries;
 	int Score;
+	int ScoreToAdd;
 	
 	FWord* Words[4][26];
 	FWord* GameWords[5];
@@ -40,7 +44,7 @@ private:
 
 public:
 	FBullCowGame(int Difficulty);
-
+	
 	//Getters
 	int GetMaxTries() const;
 	int GetCurrentTry() const;
@@ -51,5 +55,8 @@ public:
 	void NextWord();
 
 	FWord* GetCurrentWord();
+
+	int GetScoreToAdd();
+	void AddScore(int Score);
 
 };
