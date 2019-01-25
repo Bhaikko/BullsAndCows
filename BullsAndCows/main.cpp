@@ -91,7 +91,8 @@ void PrintIntro()
 	std::cout << "2. High Scores" << std::endl;
 	std::cout << "3. Help" << std::endl;
 	std::cout << "4. Credits" << std::endl;
-	std::cout << "5. Exit" << std::endl;
+	std::cout << "5. Delete Record" << std::endl;
+	std::cout << "6. Exit" << std::endl;
 	std::cout << "Press Corresponding Numbers For Selection Options" << std::endl;
 	
 
@@ -120,11 +121,15 @@ void PrintIntro()
 		break;
 
 	case 5:
+		BCGame->DeleteRecord();
+		break;
+
+	case 6:
 		return;
 
 	}
 
-	return;
+	PrintIntro();
 
 }
 

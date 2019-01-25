@@ -77,6 +77,7 @@ public:
 
 	void EvaluateScore(int Difficulty);
 	void ShowScore();
+	void DeleteRecord();
 
 	
 
