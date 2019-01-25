@@ -1,9 +1,10 @@
 #include "Record.h"
 
-Record::Record()
+
+Record::Record(std::string Name,int Score)
 {
-	Name = "";
-	Score = 0;
+	this->Name = Name;
+	this->Score = Score;
 }
 
 int Record::GetScore()
@@ -11,7 +12,8 @@ int Record::GetScore()
 	return Score;
 }
 
-void Record::InitialiseScore()
+void Record::ShowRecord()
 {
-
+	std::cout << "Name: " << Name << std::endl;
+	std::cout << "Score: " << Score << std::endl;
 }

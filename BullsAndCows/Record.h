@@ -1,8 +1,6 @@
 #pragma once
 #include <iostream>
-#include <queue>
-#include <vector>
-#include <stack>
+
 #include <string>
 
 class Record
@@ -13,21 +11,11 @@ private:
 
 public:
 
-	Record();
+	Record(std::string Name,int Score);
 	int GetScore();
 
-	void Input();
-	void InitialiseScore();
-	void ShowScores();
+	void ShowRecord();
 
+	
 };
 
-struct MinScore
-{
-	bool operator()(Record* Record1, Record* Record2)
-	{
-		return Record1->GetScore() > Record2->GetScore();
-	}
-};
-
-//std::priority_queue<Record*> Standings;

@@ -36,7 +36,7 @@ void ChoiceInput()
 
 void PlayGame(int Difficulty)
 {
-	system("cls");
+	//system("cls");
 	
 	int CurrentLevel = 1;
 	bool bWordShown = false;

@@ -1,7 +1,12 @@
 #pragma once
 #include<string>
 #include"FWord.h"
+#include "Record.h"
 #include<map>
+#include <fstream>
+#include <queue>
+#include <vector>
+#include <stack>
 
 
 struct FBullCowCount
@@ -22,6 +27,14 @@ enum class EWordStatus
 	Not_Lowercase
 };
 
+struct MinScore
+{
+	bool operator()(Record* Record1, Record* Record2)
+	{
+		return Record1->GetScore() > Record2->GetScore();
+	}
+};
+
 class FBullCowGame
 {
 private:
@@ -39,8 +52,10 @@ private:
 	bool IsLowercase(std::string) const;
 
 	void DataInitialisation();
-	FWord* GenerateWord(int Difficulty);
+	void GenerateWord(int Difficulty);
 	void SetMaxTries(int Difficulty);
+
+	void DefaultRecord();
 
 public:
 	FBullCowGame(int Difficulty);
@@ -58,5 +73,12 @@ public:
 
 	int GetScoreToAdd();
 	void AddScore(int Score);
+
+	void InitialiseScore();
+	
+
+	
+
+	std::priority_queue<Record*, std::vector<Record*>, MinScore>* Standings[4];
 
 };

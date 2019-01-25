@@ -1,4 +1,5 @@
 #include "FBullCowGame.h"
+#include <ctime>
 
 FBullCowGame::FBullCowGame(int Difficulty)
 {	
@@ -13,20 +14,25 @@ FBullCowGame::FBullCowGame(int Difficulty)
 			Words[i][j] = new FWord;
 	
 	}
-	DataInitialisation();
 
-	for (int i = 1; i <= 5; i++)
-	{
-		GameWords[i - 1] = GenerateWord(Difficulty);
-	}
+	DataInitialisation();
+	GenerateWord(Difficulty);
+	
 	HiddenWord = GameWords[CurrentWordIndex];
 	return;
 }
-FWord* FBullCowGame::GenerateWord(int Difficulty)
+
+void FBullCowGame::GenerateWord(int Difficulty)
 {	
-	int WordIndex = std::rand() % 26;
+	int WordIndex;
+	std::srand(time(NULL));
+	for (int i = 0; i < 5; i++)
+	{
+		WordIndex = std::rand() % 26;
+		GameWords[i] = Words[Difficulty - 1][WordIndex];
+	}
 	
-	return Words[Difficulty - 1][WordIndex];
+
 }
 
 void FBullCowGame::DataInitialisation()
@@ -714,6 +720,11 @@ int FBullCowGame::GetMaxTries() const
 int FBullCowGame::GetCurrentTry() const
 {	return CurrentTry;}
 
+int FBullCowGame::GetScoreToAdd()
+{
+	return ScoreToAdd;
+}
+
 
 bool FBullCowGame::IsIsogram(std::string Word) const
 {
@@ -788,6 +799,7 @@ FBullCowCount FBullCowGame::SubmitValidGuess(std::string Guess)
 
 	return BullCowCount;
 }
+
 FWord* FBullCowGame::GetCurrentWord()
 {
 	return HiddenWord;
@@ -796,6 +808,7 @@ FWord* FBullCowGame::GetCurrentWord()
 void FBullCowGame::NextWord()
 {
 	CurrentWordIndex++;
+	
 	HiddenWord = GameWords[CurrentWordIndex];
 	CurrentTry = 1;
 }
@@ -805,7 +818,30 @@ void FBullCowGame::AddScore(int Score)
 	this->Score += Score;
 }
 
-int FBullCowGame::GetScoreToAdd()
+
+
+void FBullCowGame::InitialiseScore()
 {
-	return ScoreToAdd;
+	std::fstream Score;
+
+	Score.open("Record.dat", std::ios::_Noreplace);
+
+	
+
+
+}
+
+void FBullCowGame::DefaultRecord()
+{
+	for (int i = 1; i <= 5; i++)
+	{
+		for (int j = 1; j <= 5; j++)
+		{
+			Record* Temp = new Record("AAA", 0);
+			Standings[i]->push(Temp);
+			delete Temp;
+		}
+		
+	}
+	
 }
