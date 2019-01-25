@@ -47,6 +47,7 @@ private:
 	FWord* Words[4][26];
 	FWord* GameWords[5];
 	FWord* HiddenWord;
+	std::priority_queue<Record*, std::vector<Record*>, MinScore>* Standings[4];
 
 	bool IsIsogram(std::string) const;
 	bool IsLowercase(std::string) const;
@@ -74,11 +75,9 @@ public:
 	int GetScoreToAdd();
 	void AddScore(int Score);
 
-	void InitialiseScore();
-	
+	void EvaluateScore(int Difficulty);
+	void ShowScore();
 
 	
-
-	std::priority_queue<Record*, std::vector<Record*>, MinScore>* Standings[4];
 
 };

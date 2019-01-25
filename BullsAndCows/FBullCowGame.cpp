@@ -66,10 +66,10 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Award = "Did You Know?! Apple Max Was Found on April Fool's Day 1976.";
 	Col++;
 
-	Words[Row][Col]->Word = "did";
+	Words[Row][Col]->Word = "die";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Past Of 'Do'";
-	Words[Row][Col]->Award = "Did You Know?! There is a disorder called Dissociative Identitiy Disorder (DID)";
+	Words[Row][Col]->Hint = "The Thing I Want to do now";
+	Words[Row][Col]->Award = "I'm Serious";
 	Col++;
 
 
@@ -820,28 +820,102 @@ void FBullCowGame::AddScore(int Score)
 
 
 
-void FBullCowGame::InitialiseScore()
+void FBullCowGame::EvaluateScore(int Difficulty)
 {
+	/*
 	std::fstream Score;
 
-	Score.open("Record.dat", std::ios::_Noreplace);
+	Score.open("Record.dat", std::ios::_Noreplace|std::ios::binary);
 
-	
+	if (Score.eof())
+	{
+		DefaultRecord();
+		for (int i = 0; i < 5; i++)
+			Score.write((char*)&Standings[i], sizeof(Standings[i]));
 
+	}
+
+	if (Standings[Difficulty - 1]->top()->GetScore() < this->Score)
+	{
+		std::cout << "New HighScore!!!" << std::endl;
+		std::cout << "Enter Your Name" << std::endl;
+		std::string Name;
+		std::getline(std::cin, Name);
+		
+		while (!Score.eof())
+		{
+			std::priority_queue<Record*, std::vector<Record*>, MinScore>* CurrentRecord = new std::priority_queue<Record*, std::vector<Record*>, MinScore>;
+			Score.read((char*)&(*CurrentRecord), sizeof(*CurrentRecord));
+			if (CurrentRecord->top()->GetDifficulty() == Difficulty - 1)
+			{
+				CurrentRecord->top()->ModifyRecord(Name, this->Score);
+			}
+
+			std::cout << sizeof(CurrentRecord) << std::endl;
+			std::cout << sizeof(*CurrentRecord) << std::endl;
+
+		}
+
+		
+	}
+	Score.close();
+	*/
+	std::priority_queue<Record*, std::vector<Record*>, MinScore>* CurrentRecord = new std::priority_queue<Record*, std::vector<Record*>, MinScore>;
+
+	std::cout << sizeof(CurrentRecord) << std::endl;
+	std::cout << sizeof(*CurrentRecord) << std::endl;
+
+	Record* Temp = new Record("AAA", 0, 0);
+	CurrentRecord->push(Temp);
+	std::cout << sizeof(*CurrentRecord) << std::endl;
 
 }
 
 void FBullCowGame::DefaultRecord()
 {
+	int Difficulty = 0;
 	for (int i = 1; i <= 5; i++)
 	{
 		for (int j = 1; j <= 5; j++)
 		{
-			Record* Temp = new Record("AAA", 0);
-			Standings[i]->push(Temp);
+			Record* Temp = new Record("AAA", 0, Difficulty);
+			Standings[i - 1]->push(Temp);
 			delete Temp;
 		}
+		Difficulty++;
 		
 	}
 	
+}
+
+void FBullCowGame::ShowScore()
+{
+	std::fstream Score;
+	Score.open("Record.dat", std::ios::_Noreplace | std::ios::binary);
+
+	std::priority_queue<Record*, std::vector<Record*>, MinScore>* CurrentRecord = new std::priority_queue<Record*, std::vector<Record*>, MinScore>;
+	while (!Score.eof())
+	{
+		Score.read((char*)&(*CurrentRecord), sizeof(*CurrentRecord));
+		std::stack<Record*>* Records = new std::stack<Record*>;
+
+		while (!CurrentRecord->empty())
+		{
+			Records->push(CurrentRecord->top());
+			CurrentRecord->pop();
+
+		}
+
+		while (!Records->empty())
+		{
+
+			Records->top()->ShowRecord();
+			CurrentRecord->push(Records->top());
+			Records->pop();
+		}
+		std::cout << "Infinite" << std::endl;
+
+	}
+
+	Score.close();
 }

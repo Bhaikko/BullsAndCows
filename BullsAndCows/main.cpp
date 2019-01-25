@@ -36,7 +36,7 @@ void ChoiceInput()
 
 void PlayGame(int Difficulty)
 {
-	//system("cls");
+	system("cls");
 	
 	int CurrentLevel = 1;
 	bool bWordShown = false;
@@ -77,10 +77,10 @@ void PlayGame(int Difficulty)
 		std::cout << std::endl;
 
 	}
-	
+	BCGame->EvaluateScore(Difficulty);
 	std::cout << "Press 9 For Menu." << std::endl;
 	ChoiceInput();
-	//EvaluateScore();
+	
 
 }
 void PrintIntro()
@@ -108,7 +108,7 @@ void PrintIntro()
 		break;
 
 	case 2:
-		//PrintScore();
+		BCGame->ShowScore();
 		break;
 
 	case 3:
