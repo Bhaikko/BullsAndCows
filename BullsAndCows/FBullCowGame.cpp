@@ -830,9 +830,6 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 	if (Score.eof())
 	{
 
-		for (int i = 0; i < 5; i++)
-			Standings[i] = new std::priority_queue<Record*, std::vector<Record*>, MinScore>;
-
 		DefaultRecord();
 		for (int i = 0; i < 5; i++)
 			Score.write((char*)&Standings[i], sizeof(Standings[i]));
@@ -841,8 +838,8 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 
 	}
 
-	/*
-	if (Standings[Difficulty - 1]->top()->GetScore() < this->Score)
+	
+	if (Standings[Difficulty-1].top()->GetScore() < this->Score)
 	{
 		std::cout << "New HighScore!!!" << std::endl;
 		std::cout << "Enter Your Name" << std::endl;
@@ -855,14 +852,15 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 			Score.read((char*)CurrentRecord, sizeof(*CurrentRecord));
 			if (CurrentRecord->top()->GetDifficulty() == Difficulty - 1)
 			{
-				CurrentRecord->top()->ModifyRecord(Name, this->Score);
+				CurrentRecord->pop();
+				CurrentRecord->push(new Record(Name, this->Score, Difficulty - 1));
 			}
 
 		}
 
 		
 	}
-	*/
+	
 	Score.close();
 	
 	
@@ -873,12 +871,12 @@ void FBullCowGame::DefaultRecord()
 {
 	int Difficulty = 0;
 	Record* Temp;
-	for (int i = 1; i <= 5; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 1; j <= 5; j++)
 		{
 			Temp = new Record("AAA", 0, Difficulty);
-			Standings[i - 1]->push(Temp);
+			Standings[i - 1].push(Temp);
 			
 		}
 		Difficulty++;
@@ -892,17 +890,17 @@ void FBullCowGame::ShowScore()
 	std::fstream Score;
 	Score.open("Record.dat", std::ios::_Noreplace | std::ios::binary);
 
-	std::priority_queue<Record*, std::vector<Record*>, MinScore>* CurrentRecord = new std::priority_queue<Record*, std::vector<Record*>, MinScore>;
+	std::priority_queue<Record*, std::vector<Record*>, MinScore> CurrentRecord;
 	while (!Score.eof())
 	{
-		Score.read((char*)CurrentRecord, sizeof(*CurrentRecord));
+		Score.read((char*)&CurrentRecord, sizeof(CurrentRecord));
 		std::stack<Record*>* Records = new std::stack<Record*>;
 
 
-		while (!CurrentRecord->empty())
+		while (!CurrentRecord.empty())
 		{
-			Records->push(CurrentRecord->top());
-			CurrentRecord->pop();
+			Records->push(CurrentRecord.top());
+			CurrentRecord.pop();
 
 		}
 
@@ -910,7 +908,7 @@ void FBullCowGame::ShowScore()
 		{
 
 			Records->top()->ShowRecord();
-			CurrentRecord->push(Records->top());
+			CurrentRecord.push(Records->top());
 			Records->pop();
 		}
 		std::cout << "Infinite" << std::endl;
@@ -926,4 +924,5 @@ void FBullCowGame::DeleteRecord()
 	Score.open("Record.dat", std::ios::binary);
 	
 	std::remove("Record.dat");
+	Score.close();
 }

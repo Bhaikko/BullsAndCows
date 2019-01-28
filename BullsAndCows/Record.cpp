@@ -24,9 +24,3 @@ void Record::ShowRecord()
 	std::cout << "Score: " << Score << std::endl;
 	std::cout << "Difficulty: " << Difficulty << std::endl;
 }
-
-void Record::ModifyRecord(std::string Name, int Score)
-{
-	this->Name = Name;
-	this->Score = Score;
-}

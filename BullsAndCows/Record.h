@@ -18,7 +18,7 @@ public:
 
 	void ShowRecord();
 
-	void ModifyRecord(std::string Name, int Score);
+	
 	
 };
 
