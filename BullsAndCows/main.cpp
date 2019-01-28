@@ -147,6 +147,10 @@ void Help()
 	std::cout << "Alright,This Seems Easy:D 5 Word Length, 6 Guess Chances and 30 Score Per Correct Guess" << std::endl << std::endl;
 	std::cout << "Pro B)  6 Word Length, 5 Guess Chances and 50 Score Per Correct Guess" << std::endl << std::endl;
 
+	std::cout << "Bulls Are The Letters That Are Guessed Correctly and Are on Correct Position" << std::endl;
+	std::cout << "Cows Are The Letters That Are Guessed Correctly and Are on Incorrect Position" << std::endl;
+
+
 	std::cout << "You can press 9 Anytime For Menu outside Game" << std::endl;
 	ChoiceInput();
 	return;
@@ -213,7 +217,7 @@ std::string GetValidGuess()
 
 int main()
 {
-	system("cls");
+	//system("cls");
 	PrintIntro();
 	return 0;
 
