@@ -921,3 +921,8 @@ void FBullCowGame::DeleteRecord()
 	std::remove("Record.dat");
 	Score.close();
 }
+
+int FBullCowGame::ReturnCurrentScore()
+{
+	return this->Score;
+}

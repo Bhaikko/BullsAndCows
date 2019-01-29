@@ -24,5 +24,5 @@ void Record::ShowRecord()
 	std::cout << "Score: " << Score << std::endl;
 	std::cout << "Difficulty: " << Difficulty << std::endl;
 
-	std::cout << "Called" << std::endl;
+	//std::cout << "Called" << std::endl;
 }

@@ -51,7 +51,7 @@ void PlayGame(int Difficulty)
 		if (Guess == BCGame->GetCurrentWord()->Word)
 		{
 			std::cout << "Well Done!!" << std::endl;
-			std::cout << BCGame->GetCurrentWord()->Award << std::endl;
+			std::cout << "Here's Your Reward xD :"<< BCGame->GetCurrentWord()->Award << std::endl;
 			std::cout << "You've Passed Level " << CurrentLevel << " Of 5 Levels" << std::endl;
 			CurrentLevel++;
 
@@ -77,15 +77,37 @@ void PlayGame(int Difficulty)
 		std::cout << std::endl;
 
 	}
-	BCGame->EvaluateScore(Difficulty);
+	//BCGame->EvaluateScore(Difficulty);
+	std::cout << "Your Score: " << BCGame->ReturnCurrentScore() << std::endl;
 	std::cout << "Press 9 For Menu." << std::endl;
 	ChoiceInput();
 	
 
 }
+
+void IntroArt()
+{
+	std::cout << "       /)  (\ " << std::endl;
+	std::cout << "  .-._((,~~.))_.-," << std::endl;
+	std::cout << "   `=.   99   ,='" << std::endl;
+	std::cout << "     / ,o~~o. \ " << std::endl;
+	std::cout << "    { { .__. } } " << std::endl;
+	std::cout << "     ) `~~~\' (" << std::endl;
+	std::cout << "    /`-._  _\.-\ " << std::endl;
+	std::cout << "   /         )  \ " << std::endl;
+	std::cout << "  ,-X        #   X-. " << std::endl;
+	std::cout << " /   \          /   \ " << std::endl;
+	std::cout << "(     )| |  | |(     ) " << std::endl;
+	std::cout << "  \   / | |  | | \   / " << std::endl;
+	std::cout << "   \_(.-( )--( )-.)_/ " << std::endl;
+	std::cout << "   /_,\ ) /  \ ( /._\ " << std::endl;
+	std::cout << "      /_,\  /._\ " << std::endl;
+		
+}
 void PrintIntro()
 {
 	system("cls");
+	IntroArt();
 	std::cout << "Welcome To Bulls And Cows,A Fun Word Game." << std::endl;
 	std::cout << "1. New Game" << std::endl;
 	std::cout << "2. High Scores" << std::endl;
@@ -109,7 +131,7 @@ void PrintIntro()
 		break;
 
 	case 2:
-		BCGame->ShowScore();
+		//BCGame->ShowScore();
 		break;
 
 	case 3:
@@ -125,6 +147,7 @@ void PrintIntro()
 		break;
 
 	case 6:
+		exit(0);
 		return;
 
 	}
@@ -140,17 +163,23 @@ void Help()
 	std::cout << "This Game Is All About Guessing An Isogram" << std::endl;
 	std::cout << "An 'Isogram' Is Word Having No Duplicates" << std::endl;
 	std::cout << "You Will be given 5 Words one by one to guess" << std::endl;
-	
+	std::cout << std::endl;
+
 	std::cout << "Difficulty Options" << std::endl << std::endl;
-	std::cout << "Noob:( 3 Word Length, 8 Guess Chances and 10 Score Per Correct Guess " << std::endl << std::endl;
-	std::cout << "I'm Getting Hang Of This:| 4 Word Length, 7 Guess Chances and 20 Score Per Correct Guess " << std::endl << std::endl;
-	std::cout << "Alright,This Seems Easy:D 5 Word Length, 6 Guess Chances and 30 Score Per Correct Guess" << std::endl << std::endl;
-	std::cout << "Pro B)  6 Word Length, 5 Guess Chances and 50 Score Per Correct Guess" << std::endl << std::endl;
+	std::cout << "Noob:( 3 --- Word Length, 8 Guess Chances and 10 Score Per Correct Guess " << std::endl << std::endl;
+	std::cout << "I'm Getting Hang Of This:| --- 4 Word Length, 7 Guess Chances and 20 Score Per Correct Guess " << std::endl << std::endl;
+	std::cout << "Alright,This Seems Easy:D --- 5 Word Length, 6 Guess Chances and 30 Score Per Correct Guess" << std::endl << std::endl;
+	std::cout << "Pro B)  6 Word Length, --- 5 Guess Chances and 50 Score Per Correct Guess" << std::endl << std::endl;
+	std::cout << std::endl;
 
 	std::cout << "Bulls Are The Letters That Are Guessed Correctly and Are on Correct Position" << std::endl;
 	std::cout << "Cows Are The Letters That Are Guessed Correctly and Are on Incorrect Position" << std::endl;
 
+	std::cout << std::endl;
+	std::cout << "NOTE: Guesses Like Less-Length Words Or Non-Isograms Won't Be Accepted As Valid Guess And Won't Effect The Score :)" << std::endl;
+	std::cout << "All The Words Are LowerCase" << std::endl;
 
+	std::cout << std::endl;
 	std::cout << "You can press 9 Anytime For Menu outside Game" << std::endl;
 	ChoiceInput();
 	return;
@@ -160,8 +189,14 @@ void Credits()
 {
 	system("cls");
 	std::cout << "Game Made By:- Siddharth 'Bhaikko' Pawar" << std::endl;
+	std::cout << std::endl;
 	std::cout << "Isograms References 'https://www.morewords.com/words-within-plus/isogram/'" << std::endl;
+	std::cout << std::endl;
 	std::cout << "Instructors: Ben Tristm And Sam Pattuzzi" << std::endl;
+	std::cout << std::endl;
+	std::cout << "Intro Art By Hayley Jane Wakenshaw" << std::endl;
+	std::cout << std::endl;
+
 	ChoiceInput();
 	return;
 
@@ -214,10 +249,10 @@ std::string GetValidGuess()
 	return GUESS;
 }
 
-
 int main()
 {
-	//system("cls");
+	system("cls");
+	
 	PrintIntro();
 	return 0;
 
