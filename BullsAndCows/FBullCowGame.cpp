@@ -825,15 +825,20 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 	
 	std::fstream Score;
 
-	Score.open("Record.dat", std::ios::binary|std::ios::in|std::ios::out);
+	Score.open("Record.txt", std::ios::binary|std::ios::in|std::ios::out);
+	//Score.seekg(0,std::ios::end);
 
+	//if (Score.tellg() == 0)
+		//DefaultRecord();
+	
 	if (!Score)
 		DefaultRecord();
 
+	Score.seekg(0);
 	for (int i = 0; i < 4; i++)
 		Score.read((char*)&Standings[i], sizeof(Standings[i]));
 
-
+	
 	if (Standings[Difficulty-1].top()->GetScore() < this->Score)
 	{
 		std::cout << "New HighScore!!!" << std::endl;
@@ -844,8 +849,7 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 		Standings[Difficulty - 1].pop();
 		Standings[Difficulty - 1].push(new Record(Name, this->Score, Difficulty));
 
-		std::remove("Record.dat");
-
+		Score.seekg(0);
 		for (int i = 0; i < 4; i++)
 			Score.write((char*)&Standings[i], sizeof(Standings[i]));
 
@@ -858,10 +862,8 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 
 void FBullCowGame::ShowScore()
 {
-	std::fstream Score;
-	Score.open("Record.dat", std::ios::binary | std::ios::in | std::ios::out);
-
-	std::priority_queue<Record*, std::vector<Record*>, MinScore> CurrentRecord;
+	std::ifstream Score;
+	Score.open("Record.txt", std::ios::binary);
 
 	for(int i=0;i<4;i++)
 	{
@@ -888,7 +890,9 @@ void FBullCowGame::ShowScore()
 void FBullCowGame::DefaultRecord()
 {
 	std::fstream Score;
-	Score.open("Record.dat", std::ios::binary | std::ios::in | std::ios::out);
+	Score.open("Record.txt", std::ios::binary | std::ios::in | std::ios::out | std::ios::app);
+	Score.seekg(0);
+
 	int Difficulty = 1;
 	Record* Temp;
 	for (int i = 0; i < 4; i++)
@@ -905,7 +909,6 @@ void FBullCowGame::DefaultRecord()
 	for (int i = 0; i < 4; i++)
 		Score.write((char*)&Standings[i], sizeof(Standings[i]));
 
-	std::cout << "Default Record Written" << std::endl;
 
 	Score.close();
 	
@@ -915,11 +918,11 @@ void FBullCowGame::DefaultRecord()
 
 void FBullCowGame::DeleteRecord()
 {
-	std::fstream Score;
-	Score.open("Record.dat", std::ios::binary | std::ios::in | std::ios::out);
-	
-	std::remove("Record.dat");
-	Score.close();
+	//std::fstream Score;
+	//Score.open("Record.txt", std::ios::binary | std::ios::in );
+	std::cout << "Record Deleted" << std::endl;
+	std::remove("Record.txt");
+	//Score.close();
 }
 
 int FBullCowGame::ReturnCurrentScore()
