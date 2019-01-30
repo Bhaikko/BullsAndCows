@@ -77,7 +77,7 @@ void PlayGame(int Difficulty)
 		std::cout << std::endl;
 
 	}
-	//BCGame->EvaluateScore(Difficulty);
+	BCGame->EvaluateScore(Difficulty);
 	std::cout << "Your Score: " << BCGame->ReturnCurrentScore() << std::endl;
 	std::cout << "Press 9 For Menu." << std::endl;
 	ChoiceInput();
@@ -131,7 +131,8 @@ void PrintIntro()
 		break;
 
 	case 2:
-		//BCGame->ShowScore();
+		BCGame->ShowScore();
+		ChoiceInput();
 		break;
 
 	case 3:

@@ -212,39 +212,39 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "arms";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Fore____";
+	Words[Row][Col]->Award = "Did You Know?! The bone in your upper arm is called the funny bone";
 	Col++;
 
 	Words[Row][Col]->Word = "mars";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Fourth Planet";
+	Words[Row][Col]->Award = "Did You Know?! Mars Is Named After Roman God Of War";
 	Col++;
 
 	Words[Row][Col]->Word = "pair";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "____ Of Shoes";
+	Words[Row][Col]->Award = "Did You Know?! Sneakers Got Their Name Because their Soles doesn't make Noise";
 	Col++;
 
 	Words[Row][Col]->Word = "duck";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "My Autocorrect Changed F*ck To ____";
+	Words[Row][Col]->Award = "Did You KNow?! A male duck is called a drake, a female duck a hen, and a baby duck a duckling";
 	Col++;
 
 	Words[Row][Col]->Word = "bios";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A set of computer instructions in firmware which control input and output operations.";
+	Words[Row][Col]->Award = "Did You Know?! BIOS stands for Basic Input Output System";
 	Col++;
 
 
 	Words[Row][Col]->Word = "brag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "He Keeps ____ing About His Acheivements";
+	Words[Row][Col]->Award = "Did You Know?! Brag is a gambling card game which is a simplified form of poker";
 	Col++;
 
 	Words[Row][Col]->Word = "grab";
@@ -825,23 +825,11 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 	
 	std::fstream Score;
 
-	Score.open("Record.txt", std::ios::_Noreplace|std::ios::binary);
+	Score.open("Record.dat", std::ios::binary|std::ios::in|std::ios::out);
 
-	//Empty File Record
-	Score.seekg(0, std::ios::end);
-	if (Score.tellg() == 0)
-	{
+	if (!Score)
 		DefaultRecord();
-		for (int i = 0; i < 4; i++)
-			Score.write((char*)&Standings[i], sizeof(Standings[i]));
 
-		std::cout << "Default Record Written" << std::endl;
-	}
-
-	Score.seekg(0);
-		
-	
-	std::priority_queue<Record*, std::vector<Record*>, MinScore> CurrentRecord;
 	for (int i = 0; i < 4; i++)
 		Score.read((char*)&Standings[i], sizeof(Standings[i]));
 
@@ -851,43 +839,47 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 		std::cout << "New HighScore!!!" << std::endl;
 		std::cout << "Enter Your Name" << std::endl;
 		std::string Name;
-		std::getline(std::cin, Name);
+		std::cin >> Name;
 
 		Standings[Difficulty - 1].pop();
 		Standings[Difficulty - 1].push(new Record(Name, this->Score, Difficulty));
+
+		std::remove("Record.dat");
+
+		for (int i = 0; i < 4; i++)
+			Score.write((char*)&Standings[i], sizeof(Standings[i]));
+
 	}
+	
 	
 	Score.close();
 	
-	
-
 }
+
 void FBullCowGame::ShowScore()
 {
 	std::fstream Score;
-	Score.open("Record.dat", std::ios::_Noreplace | std::ios::binary);
+	Score.open("Record.dat", std::ios::binary | std::ios::in | std::ios::out);
 
 	std::priority_queue<Record*, std::vector<Record*>, MinScore> CurrentRecord;
-	while (Score.read((char*)&CurrentRecord, sizeof(CurrentRecord)))
+
+	for(int i=0;i<4;i++)
 	{
-		
+		Score.read((char*)&Standings[i], sizeof(Standings));
 		std::stack<Record*>* Records = new std::stack<Record*>;
-		while (!CurrentRecord.empty())
+		while (!Standings[i].empty())
 		{
-			Records->push(CurrentRecord.top());
-			CurrentRecord.pop();
+			Records->push(Standings[i].top());
+			Standings[i].pop();
 
 		}
-
 		while (!Records->empty())
 		{
 
 			Records->top()->ShowRecord();
-			CurrentRecord.push(Records->top());
+			Standings[i].push(Records->top());
 			Records->pop();
 		}
-		//std::cout << "Infinite" << std::endl;
-
 	}
 
 	Score.close();
@@ -895,6 +887,8 @@ void FBullCowGame::ShowScore()
 
 void FBullCowGame::DefaultRecord()
 {
+	std::fstream Score;
+	Score.open("Record.dat", std::ios::binary | std::ios::in | std::ios::out);
 	int Difficulty = 1;
 	Record* Temp;
 	for (int i = 0; i < 4; i++)
@@ -905,9 +899,15 @@ void FBullCowGame::DefaultRecord()
 			Standings[i].push(Temp);
 			
 		}
-		Difficulty++;
-		
+		Difficulty++;	
 	}
+
+	for (int i = 0; i < 4; i++)
+		Score.write((char*)&Standings[i], sizeof(Standings[i]));
+
+	std::cout << "Default Record Written" << std::endl;
+
+	Score.close();
 	
 }
 
@@ -916,7 +916,7 @@ void FBullCowGame::DefaultRecord()
 void FBullCowGame::DeleteRecord()
 {
 	std::fstream Score;
-	Score.open("Record.dat", std::ios::binary);
+	Score.open("Record.dat", std::ios::binary | std::ios::in | std::ios::out);
 	
 	std::remove("Record.dat");
 	Score.close();
