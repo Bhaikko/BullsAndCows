@@ -875,7 +875,7 @@ void FBullCowGame::ShowScore()
 		}
 		while (!Records->empty())
 		{
-			std::cout << Position++ << std::endl;
+			std::cout << Position++ << "." << std::endl;
 			Records->top()->ShowRecord();
 			Standings[i].push(Records->top());
 			Records->pop();
@@ -891,9 +891,9 @@ void FBullCowGame::ShowScore()
 
 void FBullCowGame::DefaultRecord()
 {
-	std::fstream Score;
-	Score.open("Record.txt", std::ios::binary | std::ios::in | std::ios::out | std::ios::app);
-	Score.seekg(0);
+	std::ofstream Score;
+	Score.open("Record.txt", std::ios::binary);
+
 
 	int Difficulty = 1;
 	Record* Temp;
