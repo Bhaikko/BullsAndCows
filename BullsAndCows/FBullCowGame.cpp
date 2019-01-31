@@ -41,7 +41,7 @@ void FBullCowGame::DataInitialisation()
 	int Row = 0;
 	int Col = 0;
 
-	//Difficulty 0
+	//Difficulty 1
 	Words[Row][Col]->Word = "pro";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Our Highest Difficulty";
@@ -99,26 +99,26 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "ash";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "'I was chokin' in the crowd, Building my rain up in the cloud, Falling like ___ to the ground--Imagine Dragons,Believer'";
+	Words[Row][Col]->Hint = "'I was chokin' in the crowd,\n Building my rain up in the cloud,\n Falling like ___ to the ground\n--Imagine Dragons,Believer'";
 	Words[Row][Col]->Award = "Did You Know?! Ash Ketchum From Pokemon is known as Satoshi in Japan";
 	Col++;
 
 	Words[Row][Col]->Word = "ego";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Reciprocal Of Knowledge(Starts With e)";
+	Words[Row][Col]->Hint = "Reciprocal Of Knowledge";
 	Words[Row][Col]->Award = "Did You Know?! Ego Starts To Develop in human when he/she is only 3 years old";
 	Col++;
 
 	Words[Row][Col]->Word = "god";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "'You Don't Fuck With The ___'(Singular)-Mundus, Devil May Cry";
+	Words[Row][Col]->Hint = "'You Don't Fuck With The ___'\n-Mundus, Devil May Cry";
 	Words[Row][Col]->Award = "Who Am I To Write A Fact About God Anyway";
 	Col++;
 
 	Words[Row][Col]->Word = "jam";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Bread And ___";
-	Words[Row][Col]->Award = "Jam neither is Considered as Solid nor Liquid but Condiment";
+	Words[Row][Col]->Award = "Did You Know?! Jam neither is Considered as Solid nor Liquid but Condiment";
 	Col++;
 
 	Words[Row][Col]->Word = "air";
@@ -153,14 +153,14 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "rat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Very legendary, that’s some matter-of-fact shit,You're the opposite of stars like '___' spelled backwards--Lift Off,Mike Shinodea";
+	Words[Row][Col]->Hint = "Very legendary, that’s some matter-of-fact shit,\nYou're the opposite of stars like '___' spelled backwards\n--Lift Off,Mike Shinoda";
 	Words[Row][Col]->Award = "Did You Know?! Rats take care of injured and sick rats in their group.";
 	Col++;
 
 	Words[Row][Col]->Word = "sat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "shortform used for saturday";
-	Words[Row][Col]->Award = "Did You Know?! Saturday takes it name from Saturn, the Romah god of generation,dissolution,plenty,wealth and liberation";
+	Words[Row][Col]->Award = "Did You Know?! Saturday takes it name from Saturn, the Roman god of generation,dissolution,plenty,wealth and liberation";
 	Col++;
 
 	Words[Row][Col]->Word = "gum";
@@ -172,13 +172,13 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "mug";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Coffee ___";
-	Words[Row][Col]->Award = "Blah Blah Blah";
+	Words[Row][Col]->Award = "Did You Know?! Coffee dates back to 800AD";
 	Col++;
 
 	Words[Row][Col]->Word = "tar";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Used To Make Roads, sticky substance";
-	Words[Row][Col]->Award = "Dis You Know?! The last puffs on a cigarette can contain as much as twice the amount of tar as the first puffs";
+	Words[Row][Col]->Award = "Did You Know?! The last puffs on a cigarette can contain as much as twice the amount of tar as the first puffs";
 	Col++;
 
 	Words[Row][Col]->Word = "gym";
@@ -195,8 +195,8 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "gun";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "I'm sorry for everything, Oh, everything I've done, From the second that I was born it seems I had a loaded ___, And then I shot, shot, shot a hole through everything I loved";
-	Words[Row][Col]->Award = "Did You Know?! I had no award for the Word WOW, wow!!";
+	Words[Row][Col]->Hint = "I'm sorry for everything, Oh, everything I've done,\n From the second that I was born it seems I had a loaded ___,\n And then I shot, shot, shot a hole through everything I loved";
+	Words[Row][Col]->Award = "Did You Know?! Approximately 20% of gun owners own 65% of the guns";
 	Col++;
 
 	Words[Row][Col]->Word = "zig";
@@ -206,7 +206,7 @@ void FBullCowGame::DataInitialisation()
 	Col++;
 
 
-	//Difficulty 1
+	//Difficulty 2
 	Row++;
 	Col = 0;
 
@@ -249,286 +249,286 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "grab";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Go g___ some food.";
+	Words[Row][Col]->Award = "Did You Know?! Apples are more effective than coffee at waking you up at morning, Just A Food Fact";
 	Col++;
 
 	Words[Row][Col]->Word = "bags";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A flexible container with an opening at the top, used for carrying things.";
+	Words[Row][Col]->Award = "Did You Know?! 160,000 plastic bags are used globally every second!";
 	Col++;
 
 	Words[Row][Col]->Word = "corn";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A Popcorn Ancestor";
+	Words[Row][Col]->Award = "Did You Know?! Americans eat around 17 billion quarts of popcorn every year";
 	Col++;
 
 	Words[Row][Col]->Word = "coin";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Bit____";
+	Words[Row][Col]->Award = "Did You Know?! Most coins can circulate for about 25 years before they become too worn to be used anymore.";
 	Col++;
 
 	Words[Row][Col]->Word = "drag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "____Race, Race with Gear Shifting Only in Need For Speed ";
+	Words[Row][Col]->Award = "Did You Know?! Drag Races are for those who are afraid of turns.";
 	Col++;
 
 	Words[Row][Col]->Word = "modi";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Our Prime Minister Last Name";
+	Words[Row][Col]->Award = "Did You Know?! After President Obama, Narendra Modi is the world’s most followed leader on Twitter, accounting more than 12 million followers.";
 	Col++;
 
 	Words[Row][Col]->Word = "farm";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "An area of land and its buildings, used for growing crops and rearing animals.";
+	Words[Row][Col]->Award = "Did You Know?! Each American farmer produces food and fiber for 165 people annually, both in the U.S. and abroad.";
 	Col++;
 
 	Words[Row][Col]->Word = "form";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A word with the same meaning as another formed by removing one or more of the syllables of the longer word";
+	Words[Row][Col]->Award = "Did You Know?! Computer Stands For Common Operating Machine Particularly used for Technological Engineering Research.";
 	Col++;
 
 	Words[Row][Col]->Word = "sofa";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Another Name For Couch";
+	Words[Row][Col]->Award = "Did You Know?!  The word ‘sofa’ dates back to 2000BC Egypt and derives from the Arabic word ‘suffah’ which loosely translates as ‘bench’.";
 	Col++;
 
 	Words[Row][Col]->Word = "song";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Linkin Park ____ are Best";
+	Words[Row][Col]->Award = "RIP Chester Bennington(1976-2017)";
 	Col++;
 
 	Words[Row][Col]->Word = "shit";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Bull____!!!";
+	Words[Row][Col]->Award = "Did You Know?! Buzz Aldrin was the second man on the moon... and he was also the first man to ever poop in space.";
 	Col++;
 
 	Words[Row][Col]->Word = "ribs";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Shield Of Heart";
+	Words[Row][Col]->Award = "Did You Know?! Humans Have Three Types Of Ribs.";
 	Col++;
 
 	Words[Row][Col]->Word = "ramp";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "GTA Vice City Had ____ages where you kill gand members with weapons.";
+	Words[Row][Col]->Award = "Did You Know?! GTA Vice City is loosely based on the movie Scarface.";
 	Col++;
 
-	Words[Row][Col]->Word = "miss";
+	Words[Row][Col]->Word = "vice";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "____ President";
+	Words[Row][Col]->Award = "Did You Know?! 14 US vice presidents have become president, 8 because the president died in office, and 1 because the president resigned.";
 	Col++;
 
 	Words[Row][Col]->Word = "rims";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Part Of A Wheel";
+	Words[Row][Col]->Award = "Did You Know?! A wheel with teeth is called a gear.";
 	Col++;
 
 	Words[Row][Col]->Word = "sort";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "---- Is Used To Arrange Things In Ascending Or Descending Order";
+	Words[Row][Col]->Award = "Did You Know?! Bogosort Is Sorting Algorithm Which Is Highly Ineffective In Sorting Array.";
 	Col++;
 
 	Words[Row][Col]->Word = "goat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Capra aegagrus hircus, It's Scientific Name";
+	Words[Row][Col]->Award = "Did You Know?! Goat Simulator has made more than $12 million in revenue";
 	Col++;
 
 	Words[Row][Col]->Word = "visa";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A Document Attached With Passport";
+	Words[Row][Col]->Award = "Did You Know?! There Are Three Types Of Visa- Visitor, Work And Study.";
 	Col++;
 
 	Words[Row][Col]->Word = "grow";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Everyday I g--- And Learn ";
+	Words[Row][Col]->Award = "Did You Know?! Marijuana Can Be Grown Anywhere.";
 	Col++;
 
 	Words[Row][Col]->Word = "worm";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Standalone Computer Malware Program That Replicates Itself In Order To Spread To Other Computers";
+	Words[Row][Col]->Award = "Did You Know?! There Are Approximately 2700 Different Kinds Of Earthworms.";
 	Col++;
 
-	//Difficulty 2
+	//Difficulty 3
 	Row++;
 	Col = 0;
 
 	Words[Row][Col]->Word = "amigo";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Hola a----";
+	Words[Row][Col]->Award = "Did You Know?! Amigo Is A Spanish Word For 'Friend'.";
 	Col++;
 
 	Words[Row][Col]->Word = "brags";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "The Way He Won That Game, He Always b---- About It.";
+	Words[Row][Col]->Award = "Did You Know ? !Brag is a gambling card game which is a simplified form of poker";
 	Col++;
 
 	Words[Row][Col]->Word = "cigar";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "A Cylinder Of Tobacco Rolled In Tobacco Leaves For Smoking.";
+	Words[Row][Col]->Award = "Did You Know?! One Cigar May Contain As Muc Tobacco As An Entire Pace Of Cigrattes.";
 	Col++;
 
 	Words[Row][Col]->Word = "coins";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Bit----s";
+	Words[Row][Col]->Award = "Did You Know?! Most coins can circulate for about 25 years before they become too worn to be used anymore.";
 	Col++;
 
 	Words[Row][Col]->Word = "corns";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Popcorns Ancestor";
+	Words[Row][Col]->Award = "Did You Know?! Americans eat around 17 billion quarts of popcorn every year";
 	Col++;
 
 
 	Words[Row][Col]->Word = "magic";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "What Do Magicians Do?";
+	Words[Row][Col]->Award = "Did You Know?! The Earliest Magicians Were Considered Sorcerers, And They Were Believed To Have Supernatural Powers.";
 	Col++;
 
 	Words[Row][Col]->Word = "micro";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Unit To The Power 10^-6";
+	Words[Row][Col]->Award = "Did You Know?! First Microprocessor By Intel Was Intel 4004, A 4-Bit CPU.";
 	Col++;
 
 	Words[Row][Col]->Word = "scams";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "An Illegal Plan For Making Money, Especially One That Involves tricking people.";
+	Words[Row][Col]->Award = "Did You Know?! Nigerian Scammer Sold Fake Airport For £242 Million To International Bank";
 	Col++;
 
 	Words[Row][Col]->Word = "drags";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "----Race, Race with Gear Shifting Only in Need For Speed ";
+	Words[Row][Col]->Award = "Did You Know?! Drag Races are for those who are afraid of turns.";
 	Col++;
 
 	Words[Row][Col]->Word = "radio";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "-----waves Have Frequency Band 300GHz - kHz";
+	Words[Row][Col]->Award = "Did You Know?! Early Developments In Radio Were Called 'Wireless Telegraphy'.";
 	Col++;
 
 	Words[Row][Col]->Word = "roads";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Tar Is Used To Make r----";
+	Words[Row][Col]->Award = "Did You Know?! The Road Network Of India Is Second Largest Road Network In The World With Total Length Of Around 4,320,000 Kilometers";
 	Col++;
 
 	Words[Row][Col]->Word = "hairs";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Any Of The Fine Threadlike Strands Growing From The Skin Of Humans";
+	Words[Row][Col]->Award = "Did You Know?! On Average, You Shed Aroind 50-150 Strands Of Hair A Day";
 	Col++;
 
 	Words[Row][Col]->Word = "marks";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "m---- Of My Exam Cannot Decide My Future.";
+	Words[Row][Col]->Award = "Did You Know?! Weight Loss Does Not Cure Stretch Marks But May Minimize The Apperance Of Stretch Marks.";
 	Col++;
 
 	Words[Row][Col]->Word = "laser";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Device That Emits Light Through A Process Of Optical Amplification Based On The Stimulated Emission Of Electromagnetic Radiation.";
+	Words[Row][Col]->Award = "Did You Know?! Laser Stands For Light Amplification by Stimulated Emission of Radiation";
 	Col++;
 
 	Words[Row][Col]->Word = "sigma";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "18th Letter Of Greek Alphabet Which Means 'Sum' In Mathematics.";
+	Words[Row][Col]->Award = "Did You Know?! The Word 'Alphabet' Itself Comes From Greek Alphabets 'Alpha' And 'Beta'";
 	Col++;
 
 	Words[Row][Col]->Word = "moral";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "m---- Values And Ethics";
+	Words[Row][Col]->Award = "Did You Know?! Moral Values And Ethics Is Served As A Subject In Engineering";
 	Col++;
 
 	Words[Row][Col]->Word = "human";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Homo Sapiens";
+	Words[Row][Col]->Award = "Did You Know?! The Only Part Without Blood Supply Is Cornea Of Eye";
 	Col++;
 
 	Words[Row][Col]->Word = "pairs";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "p---- Of Jeans";
+	Words[Row][Col]->Award = "Did You Know?! Asia Produces Half the Jeans Worn by the World.";
 	Col++;
 
 	Words[Row][Col]->Word = "grasp";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Seize And Hold Firmly.";
+	Words[Row][Col]->Award = "Fact Error 404";
 	Col++;
 
 	Words[Row][Col]->Word = "paris";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "France's Capital";
+	Words[Row][Col]->Award = "Did You Know?! Effiel Tower Was Supposed To Be A Temporary Installation";
 	Col++;
 
 	Words[Row][Col]->Word = "prims";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "p---- Alogorithm, Used To Find Minimum Spanning Tree";
+	Words[Row][Col]->Award = "Did You Know?! Google Makes Changes To Its Algorithm Roughly 500 Times Per Year.";
 	Col++;
 
 	Words[Row][Col]->Word = "jeans";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Pair Of j----";
+	Words[Row][Col]->Award = "Did You Know?! Asia Produces Half the Jeans Worn by the World.";
 	Col++;
 
 	Words[Row][Col]->Word = "ramps";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "GTA Vice City Had ----(s)ages where you kill gand members with weapons.";
+	Words[Row][Col]->Award = "Did You Know?! GTA Vice City is loosely based on the movie Scarface.";
 	Col++;
 
 	Words[Row][Col]->Word = "armor";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "I Hear My Battle Symphony,/n All The World In Front Of Me,\nIf My ---- Breaks,\n I'll Fuse It Back Together,\n -- Battle Symphony, Linkin Park";
+	Words[Row][Col]->Award = "Did You Know?! Knights Had To Practice Putting On And Wearing Their Armor.";
 	Col++;
 
 	Words[Row][Col]->Word = "visor";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Sometimes Wore By Tennis Players";
+	Words[Row][Col]->Award = "Did You Know?! Yellow Tennis Balls Were Used At Wimbledon For The First Time In 1986";
 	Col++;
 
 	Words[Row][Col]->Word = "grays";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Highest Difficulty";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Hint = "Largest Town In Borough And Unitary Authority Of Thurrock In Essex.";
+	Words[Row][Col]->Award = "Did You Know?! Stress Causes The Stem Cells To Leave Our Hair Follucles, Leaving Hair Gray Or White.";
 	Col++;
 
-	//Difficulty 3
+	//Difficulty 4
 	Row++;
 	Col = 0;
 
