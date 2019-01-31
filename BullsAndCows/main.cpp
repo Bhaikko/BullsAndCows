@@ -44,14 +44,15 @@ void PlayGame(int Difficulty)
 	{
 		if (!bWordShown)
 		{
-			std::cout << "Hint:" << BCGame->GetCurrentWord()->Hint << std::endl;
+			std::cout << "Level: " << CurrentLevel << std::endl;
+			std::cout << "Hint: " << BCGame->GetCurrentWord()->Hint << std::endl;
 			bWordShown = true;
 		}
 		std::string Guess=GetValidGuess();
 		if (Guess == BCGame->GetCurrentWord()->Word)
 		{
 			std::cout << "Well Done!!" << std::endl;
-			std::cout << "Here's Your Reward xD :"<< BCGame->GetCurrentWord()->Award << std::endl;
+			std::cout << "Here's Your Reward : "<< BCGame->GetCurrentWord()->Award << std::endl;
 			std::cout << "You've Passed Level " << CurrentLevel << " Of 5 Levels" << std::endl;
 			CurrentLevel++;
 
@@ -59,13 +60,11 @@ void PlayGame(int Difficulty)
 			BCGame->AddScore(Award*BCGame->GetScoreToAdd());
 
 			BCGame->NextWord();
-			bWordShown = false;
-
-			
-			
+			bWordShown = false;	
 		}
 		else if (BCGame->GetCurrentTry() == BCGame->GetMaxTries())
 		{
+			std::cout << "The Word Is" << BCGame->GetCurrentWord()->Word << std::endl;
 			std::cout << "Better Luck Next Time" << std::endl;
 			break;
 		}
@@ -76,9 +75,9 @@ void PlayGame(int Difficulty)
 		}
 		std::cout << std::endl;
 
-	}
-	BCGame->EvaluateScore(Difficulty);
+	}	
 	std::cout << "Your Score: " << BCGame->ReturnCurrentScore() << std::endl;
+	BCGame->EvaluateScore(Difficulty);
 	std::cout << "Press 9 For Menu." << std::endl;
 	ChoiceInput();
 	
@@ -90,18 +89,19 @@ void IntroArt()
 	std::cout << "       /)  (\ " << std::endl;
 	std::cout << "  .-._((,~~.))_.-," << std::endl;
 	std::cout << "   `=.   99   ,='" << std::endl;
-	std::cout << "     / ,o~~o. \ " << std::endl;
+	std::cout << "     / ,o~~o. \\ " << std::endl;
 	std::cout << "    { { .__. } } " << std::endl;
-	std::cout << "     ) `~~~\' (" << std::endl;
-	std::cout << "    /`-._  _\.-\ " << std::endl;
-	std::cout << "   /         )  \ " << std::endl;
+	std::cout << "     ) `~~~\\' (" << std::endl;
+	std::cout << "    /`-._  _\\.-\\ " << std::endl;
+	std::cout << "   /         )  \\ " << std::endl;
 	std::cout << "  ,-X        #   X-. " << std::endl;
-	std::cout << " /   \          /   \ " << std::endl;
+	std::cout << " /   \\          /   \\ " << std::endl;
 	std::cout << "(     )| |  | |(     ) " << std::endl;
-	std::cout << "  \   / | |  | | \   / " << std::endl;
-	std::cout << "   \_(.-( )--( )-.)_/ " << std::endl;
-	std::cout << "   /_,\ ) /  \ ( /._\ " << std::endl;
-	std::cout << "      /_,\  /._\ " << std::endl;
+	std::cout << " \\   / | |  | | \   / " << std::endl;
+	std::cout << "  \\_(.-( )--( )-.)_/ " << std::endl;
+	std::cout << "   /_,\\ ) /  \ ( /._\\ " << std::endl;
+	std::cout << "      /_,\\  /._\\ " << std::endl;
+	std::cout << std::endl;
 		
 }
 void PrintIntro()
@@ -115,7 +115,8 @@ void PrintIntro()
 	std::cout << "4. Credits" << std::endl;
 	std::cout << "5. Delete Record" << std::endl;
 	std::cout << "6. Exit" << std::endl;
-	std::cout << "Press Corresponding Numbers For Selection Options" << std::endl;
+	std::cout << "Press Corresponding Numbers For Selecting Options" << std::endl;
+	std::cout << "If You Are Playing For First Time Then Do Mind Checking Help" << std::endl;
 	
 
 	int Choice;
@@ -132,6 +133,7 @@ void PrintIntro()
 
 	case 2:
 		BCGame->ShowScore();
+		std::cout << "Press 9 For Menu" << std::endl;
 		ChoiceInput();
 		break;
 
@@ -164,24 +166,27 @@ void Help()
 	std::cout << "This Game Is All About Guessing An Isogram" << std::endl;
 	std::cout << "An 'Isogram' Is Word Having No Duplicates" << std::endl;
 	std::cout << "You Will be given 5 Words one by one to guess" << std::endl;
+	std::cout << "Word Can Be Either A Noun or Adjective or Verb " << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "Difficulty Options" << std::endl << std::endl;
+	std::cout << ":::Difficulty Options:::" << std::endl << std::endl;
 	std::cout << "Noob:( 3 --- Word Length, 8 Guess Chances and 10 Score Per Correct Guess " << std::endl << std::endl;
 	std::cout << "I'm Getting Hang Of This:| --- 4 Word Length, 7 Guess Chances and 20 Score Per Correct Guess " << std::endl << std::endl;
 	std::cout << "Alright,This Seems Easy:D --- 5 Word Length, 6 Guess Chances and 30 Score Per Correct Guess" << std::endl << std::endl;
-	std::cout << "Pro B)  6 Word Length, --- 5 Guess Chances and 50 Score Per Correct Guess" << std::endl << std::endl;
+	std::cout << "Pro B) --- 6 Word Length, 5 Guess Chances and 50 Score Per Correct Guess" << std::endl << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "Bulls Are The Letters That Are Guessed Correctly and Are on Correct Position" << std::endl;
-	std::cout << "Cows Are The Letters That Are Guessed Correctly and Are on Incorrect Position" << std::endl;
+	std::cout << ":::Terminology:::" << std::endl;
+	std::cout << "Bulls: Letters That Are Guessed Correctly and Are on Correct Position" << std::endl;
+	std::cout << "Cows: Letters That Are Guessed Correctly and Are on Incorrect Position" << std::endl;
 
 	std::cout << std::endl;
-	std::cout << "NOTE: Guesses Like Less-Length Words Or Non-Isograms Won't Be Accepted As Valid Guess And Won't Effect The Score :)" << std::endl;
+	std::cout << ":::NOTE:::" << std::endl;
+	std::cout << "Guesses Like Less-Length Words Or Non-Isograms Won't Be Accepted As Valid Guess And Won't Effect The Score :)" << std::endl;
 	std::cout << "All The Words Are LowerCase" << std::endl;
-
+	std::cout << "Some Words Can Be Plural Instead Of Singular Like 'Mayors' Instead Of 'Mayor'" << std::endl;
 	std::cout << std::endl;
-	std::cout << "You can press 9 Anytime For Menu outside Game" << std::endl;
+	std::cout << "Press 9 For Menu" << std::endl;
 	ChoiceInput();
 	return;
 }
@@ -198,6 +203,7 @@ void Credits()
 	std::cout << "Intro Art By Hayley Jane Wakenshaw" << std::endl;
 	std::cout << std::endl;
 
+	std::cout << "Press 9 For Menu" << std::endl;
 	ChoiceInput();
 	return;
 

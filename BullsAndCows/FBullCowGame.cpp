@@ -87,19 +87,19 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "sir";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "And Then An Army Officer Shouted, '___ Yes ___'";
+	Words[Row][Col]->Hint = "And Then An Army Officer Shouted, '--- Yes ---'";
 	Words[Row][Col]->Award = "Did You Know?! GTA Vice City Had A Mission called 'Sir,Yes,Sir' in which you blew up whole city with a stolen tank, Memories!!";
 	Col++;
 
 	Words[Row][Col]->Word = "lag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "I Died In the game because of the STUPID ___";
+	Words[Row][Col]->Hint = "I Died In the game because of the STUPID ---";
 	Words[Row][Col]->Award = "Did You Know?! There Is A Disease Called Jet Lag Having No Cure";
 	Col++;
 
 	Words[Row][Col]->Word = "ash";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "'I was chokin' in the crowd,\n Building my rain up in the cloud,\n Falling like ___ to the ground\n--Imagine Dragons,Believer'";
+	Words[Row][Col]->Hint = "'I was chokin' in the crowd,\n Building my rain up in the cloud,\n Falling like --- to the ground\n--Imagine Dragons,Believer'";
 	Words[Row][Col]->Award = "Did You Know?! Ash Ketchum From Pokemon Is Known As Satoshi In Japan";
 	Col++;
 
@@ -111,13 +111,13 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "god";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "'You Don't Fuck With The ___'\n-Mundus, Devil May Cry";
+	Words[Row][Col]->Hint = "'You Don't Fuck With The ---'\n-Mundus, Devil May Cry";
 	Words[Row][Col]->Award = "Who Am I To Write A Fact About God Anyway";
 	Col++;
 
 	Words[Row][Col]->Word = "jam";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Bread And ___";
+	Words[Row][Col]->Hint = "Bread And ---";
 	Words[Row][Col]->Award = "Did You Know?! Jam neither is Considered as Solid nor Liquid but Condiment";
 	Col++;
 
@@ -129,7 +129,7 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "oil";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Hair___, we apply it on our Hair";
+	Words[Row][Col]->Hint = "Hair---, we apply it on our Hair";
 	Words[Row][Col]->Award = "Did You know?! Only 50% Of Crude oil is converted into fuel";
 	Col++;
 
@@ -141,19 +141,19 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "git";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "___hub, software engineer's hub where they share source codes";
+	Words[Row][Col]->Hint = "---hub, software engineer's hub where they share source codes";
 	Words[Row][Col]->Award = "Git Comfortable with using Git, Git it??";
 	Col++;
 
 	Words[Row][Col]->Word = "get";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "___ set go!!";
+	Words[Row][Col]->Hint = "--- set go!!";
 	Words[Row][Col]->Award = "Did You Know?! go is the smallest sentence one could make";
 	Col++;
 
 	Words[Row][Col]->Word = "rat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Very legendary, that’s some matter-of-fact shit,\nYou're the opposite of stars like '___' spelled backwards\n--Lift Off,Mike Shinoda";
+	Words[Row][Col]->Hint = "Very legendary, that’s some matter-of-fact shit,\nYou're the opposite of stars like '---' spelled backwards\n--Lift Off,Mike Shinoda";
 	Words[Row][Col]->Award = "Did You Know?! Rats take care of injured and sick rats in their group.";
 	Col++;
 
@@ -165,13 +165,13 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "gum";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Chewing ___";
+	Words[Row][Col]->Hint = "Chewing ---";
 	Words[Row][Col]->Award = "Did You Know?! Kids in North America spend approximately half a billion dollars on bubble gum every year";
 	Col++;
 
 	Words[Row][Col]->Word = "mug";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Coffee ___";
+	Words[Row][Col]->Hint = "Coffee ---";
 	Words[Row][Col]->Award = "Did You Know?! Coffee dates back to 800AD";
 	Col++;
 
@@ -201,7 +201,7 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "zig";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "___ zag";
+	Words[Row][Col]->Hint = "--- zag";
 	Words[Row][Col]->Award = "I litreally gave up at this word for thinking a fact for zig zag, i mean come on, i have to hard code 4(Difficulty)*26(words) description";
 	Col++;
 
@@ -212,7 +212,7 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "arms";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Fore____";
+	Words[Row][Col]->Hint = "Fore----";
 	Words[Row][Col]->Award = "Did You Know?! The bone in your upper arm is called the funny bone";
 	Col++;
 
@@ -224,14 +224,14 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "pair";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "____ Of Shoes";
+	Words[Row][Col]->Hint = "---- Of Shoes";
 	Words[Row][Col]->Award = "Did You Know?! Sneakers Got Their Name Because their Soles doesn't make Noise";
 	Col++;
 
 	Words[Row][Col]->Word = "duck";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "My Autocorrect Changed F*ck To ____";
-	Words[Row][Col]->Award = "Did You KNow?! A male duck is called a drake, a female duck a hen, and a baby duck a duckling";
+	Words[Row][Col]->Hint = "My Autocorrect Changed F*ck To ----";
+	Words[Row][Col]->Award = "Did You Know?! A male duck is called a drake, a female duck a hen, and a baby duck a duckling";
 	Col++;
 
 	Words[Row][Col]->Word = "bios";
@@ -243,13 +243,13 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "brag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "He Keeps ____ing About His Acheivements";
+	Words[Row][Col]->Hint = "He Keeps ----ing About His Acheivements";
 	Words[Row][Col]->Award = "Did You Know?! Brag is a gambling card game which is a simplified form of poker";
 	Col++;
 
 	Words[Row][Col]->Word = "grab";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Go g___ some food.";
+	Words[Row][Col]->Hint = "Go g--- some food.";
 	Words[Row][Col]->Award = "Did You Know?! Apples are more effective than coffee at waking you up at morning, Just A Food Fact";
 	Col++;
 
@@ -267,13 +267,13 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "coin";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Bit____";
+	Words[Row][Col]->Hint = "Bit----";
 	Words[Row][Col]->Award = "Did You Know?! Most coins can circulate for about 25 years before they become too worn to be used anymore.";
 	Col++;
 
 	Words[Row][Col]->Word = "drag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "____Race, Race with Gear Shifting Only in Need For Speed ";
+	Words[Row][Col]->Hint = "----Race, Race with Gear Shifting Only in Need For Speed ";
 	Words[Row][Col]->Award = "Did You Know?! Drag Races are for those who are afraid of turns.";
 	Col++;
 
@@ -303,13 +303,13 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "song";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Linkin Park ____ are Best";
+	Words[Row][Col]->Hint = "Linkin Park ---- are Best";
 	Words[Row][Col]->Award = "RIP Chester Bennington(1976-2017)";
 	Col++;
 
 	Words[Row][Col]->Word = "shit";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Bull____!!!";
+	Words[Row][Col]->Hint = "Bull----!!!";
 	Words[Row][Col]->Award = "Did You Know?! Buzz Aldrin was the second man on the moon... and he was also the first man to ever poop in space.";
 	Col++;
 
@@ -321,13 +321,13 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "ramp";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "GTA Vice City Had ____ages where you kill gand members with weapons.";
+	Words[Row][Col]->Hint = "GTA Vice City Had ----ages where you kill gand members with weapons.";
 	Words[Row][Col]->Award = "Did You Know?! GTA Vice City is loosely based on the movie Scarface.";
 	Col++;
 
 	Words[Row][Col]->Word = "vice";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "____ President";
+	Words[Row][Col]->Hint = "---- President";
 	Words[Row][Col]->Award = "Did You Know?! 14 US vice presidents have become president, 8 because the president died in office, and 1 because the president resigned.";
 	Col++;
 
@@ -826,10 +826,6 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 	std::fstream Score;
 
 	Score.open("Record.txt", std::ios::binary|std::ios::in|std::ios::out);
-	//Score.seekg(0,std::ios::end);
-
-	//if (Score.tellg() == 0)
-		//DefaultRecord();
 	
 	if (!Score)
 		DefaultRecord();
@@ -864,11 +860,13 @@ void FBullCowGame::ShowScore()
 {
 	std::ifstream Score;
 	Score.open("Record.txt", std::ios::binary);
-
+	int Position = 1;
 	for(int i=0;i<4;i++)
 	{
+		std::cout << "########################" << std::endl;
 		Score.read((char*)&Standings[i], sizeof(Standings));
 		std::stack<Record*>* Records = new std::stack<Record*>;
+		
 		while (!Standings[i].empty())
 		{
 			Records->push(Standings[i].top());
@@ -877,14 +875,18 @@ void FBullCowGame::ShowScore()
 		}
 		while (!Records->empty())
 		{
-
+			std::cout << Position++ << std::endl;
 			Records->top()->ShowRecord();
 			Standings[i].push(Records->top());
 			Records->pop();
 		}
-	}
+		std::cout << std::endl;
+		Position = 1;
 
+	}
+	std::cout << "########################" << std::endl;
 	Score.close();
+
 }
 
 void FBullCowGame::DefaultRecord()
@@ -918,11 +920,9 @@ void FBullCowGame::DefaultRecord()
 
 void FBullCowGame::DeleteRecord()
 {
-	//std::fstream Score;
-	//Score.open("Record.txt", std::ios::binary | std::ios::in );
 	std::cout << "Record Deleted" << std::endl;
 	std::remove("Record.txt");
-	//Score.close();
+
 }
 
 int FBullCowGame::ReturnCurrentScore()
