@@ -1,6 +1,7 @@
 #include "FBullCowGame.h"
 #include <ctime>
 
+
 FBullCowGame::FBullCowGame(int Difficulty)
 {	
 	CurrentTry = 1;
@@ -822,78 +823,50 @@ void FBullCowGame::AddScore(int Score)
 
 void FBullCowGame::EvaluateScore(int Difficulty)
 {
-	
-	std::fstream Score;
-
-	Score.open("Record.txt", std::ios::binary|std::ios::in|std::ios::out);
+	FILE* Score;
+	Score = fopen("Record.txt", "r");
 	
 	if (!Score)
 		DefaultRecord();
 
-	Score.seekg(0);
+	Score = fopen("Record.txt", "r+");
+	/*
+	fseek(Score, 0, SEEK_END);
+	if(ftell(Score)==0)
+		DefaultRecord();
+
+	fseek(Score, 0, SEEK_SET);
+	*/
 	for (int i = 0; i < 4; i++)
-		Score.read((char*)&Standings[i], sizeof(Standings[i]));
+		std::fread(&Standings[i], sizeof(Standings[i]), 1 ,Score);
 
 	
 	if (Standings[Difficulty-1].top()->GetScore() < this->Score)
 	{
 		std::cout << "New HighScore!!!" << std::endl;
 		std::cout << "Enter Your Name" << std::endl;
-		std::string Name;
+		char Name[20];
 		std::cin >> Name;
 
 		Standings[Difficulty - 1].pop();
 		Standings[Difficulty - 1].push(new Record(Name, this->Score, Difficulty));
 
-		Score.seekg(0);
+
 		for (int i = 0; i < 4; i++)
-			Score.write((char*)&Standings[i], sizeof(Standings[i]));
+			std::fwrite(&Standings[i], sizeof(class Record), 1, Score);
 
 	}
 	
+	fclose(Score);
+
 	
-	Score.close();
-	
-}
-
-void FBullCowGame::ShowScore()
-{
-	std::ifstream Score;
-	Score.open("Record.txt", std::ios::binary);
-	int Position = 1;
-	for(int i=0;i<4;i++)
-	{
-		std::cout << "########################" << std::endl;
-		Score.read((char*)&Standings[i], sizeof(Standings));
-		std::stack<Record*>* Records = new std::stack<Record*>;
-		
-		while (!Standings[i].empty())
-		{
-			Records->push(Standings[i].top());
-			Standings[i].pop();
-
-		}
-		while (!Records->empty())
-		{
-			std::cout << Position++ << "." << std::endl;
-			Records->top()->ShowRecord();
-			Standings[i].push(Records->top());
-			Records->pop();
-		}
-		std::cout << std::endl;
-		Position = 1;
-
-	}
-	std::cout << "########################" << std::endl;
-	Score.close();
-
 }
 
 void FBullCowGame::DefaultRecord()
 {
-	std::ofstream Score;
-	Score.open("Record.txt", std::ios::binary);
+	FILE* Score;
 
+	Score = fopen("Record.txt", "w");
 
 	int Difficulty = 1;
 	Record* Temp;
@@ -901,20 +874,59 @@ void FBullCowGame::DefaultRecord()
 	{
 		for (int j = 1; j <= 5; j++)
 		{
-			Temp = new Record("AAA", 0, Difficulty);
+			char Name[] = "AAA";
+			Temp = new Record(Name, 0, Difficulty);
 			Standings[i].push(Temp);
-			
+
 		}
-		Difficulty++;	
+		Difficulty++;
 	}
 
 	for (int i = 0; i < 4; i++)
-		Score.write((char*)&Standings[i], sizeof(Standings[i]));
+		fwrite(&Standings[i], sizeof(Standings[i]), 1, Score);
 
-
-	Score.close();
-	
+	std::cout << "DefaultRecord Written" << std::endl;
+	fclose(Score);
 }
+
+void FBullCowGame::ShowScore()
+{
+
+	FILE* Score;
+	Score = fopen("Record.txt", "r");
+	int Position = 1;
+
+	for(int i=0;i<4;i++)
+	{
+		std::cout << "########################" << std::endl;
+		std::priority_queue<Record*, std::vector<Record*>, MinScore> Current;
+		std::fread(&Current, sizeof(class Record), 1,  Score);
+
+		std::stack<Record*>* Records = new std::stack<Record*>;
+		
+		while (!Current.empty())
+		{
+			Records->push(Current.top());
+			Current.pop();
+
+		}
+		while (!Records->empty())
+		{
+			std::cout << Position++ << "." << std::endl;
+			Records->top()->ShowRecord();
+			Current.push(Records->top());
+			Records->pop();
+		}
+		std::cout << std::endl;
+		Position = 1;
+
+	}
+	
+	std::cout << "########################" << std::endl;
+
+
+}
+
 
 
 

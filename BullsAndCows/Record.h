@@ -1,18 +1,19 @@
 #pragma once
 #include <iostream>
+#include <cstring>
 
-#include <string>
+
 
 class Record
 {
 private:
-	std::string Name;
+	char Name[20];
 	int Score;
 	int Difficulty;
 
 public:
 
-	Record(std::string Name,int Score,int Difficulty);
+	Record(char Name[20],int Score,int Difficulty);
 	int GetScore();
 	int GetDifficulty();
 

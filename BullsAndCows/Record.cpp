@@ -1,9 +1,9 @@
 #include "Record.h"
 
 
-Record::Record(std::string Name,int Score,int Difficulty)
+Record::Record(char Name[20],int Score,int Difficulty)
 {
-	this->Name = Name;
+	strcpy(this->Name, Name);
 	this->Score = Score;
 	this->Difficulty = Difficulty;
 }
