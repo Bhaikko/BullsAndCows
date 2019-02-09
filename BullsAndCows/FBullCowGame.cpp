@@ -1,7 +1,7 @@
 #pragma once
 #include "FBullCowGame.h"
 #include <ctime>
-#include <algorithm>
+
 
 
 FBullCowGame::FBullCowGame(int Difficulty)
@@ -865,7 +865,7 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 		std::cin >> Name;
 
 
-		Standings[Difficulty - 1][4].ModifyRecord(Name, this->Score, Difficulty);
+		Standings[Difficulty - 1][4].ModifyRecord(Name, this->Score);
 		BubbleSort(Standings[Difficulty - 1], 5);
 
 		for (int i = 0; i < 4; i++)
@@ -892,7 +892,7 @@ void FBullCowGame::DefaultRecord()
 		for (int j = 1; j <= 5; j++)
 		{
 			char Name[10] = "AAA";
-			Record Temp(Name, 0, Difficulty);
+			Record Temp(Name, 0);
 			Score.write((char*)&Temp, sizeof(Temp));
 			std::cout << "YO" << std::endl;
 
@@ -916,7 +916,7 @@ void FBullCowGame::ShowScore()
 	Score.open("Record.dat");
 
 	int Position = 1;
-
+	int Difficulty = 1;
 	/*for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 5; j++)
@@ -944,6 +944,10 @@ void FBullCowGame::ShowScore()
 	}*/
 
 	std::cout << "########################" << std::endl;
+	std::cout << "1. Noob :(" << std::endl;
+	Difficulty++;
+	
+
 	Record Current;
 	while (Score.read((char*)&Current, sizeof(Current)))
 	{
@@ -953,7 +957,18 @@ void FBullCowGame::ShowScore()
 		if (Position == 6)
 		{
 			Position = 1;
+			
 			std::cout << "########################" << std::endl;
+			if(Difficulty==2)
+				std::cout << "2. I'm Getting Hang Of This :|" << std::endl;
+			else if(Difficulty==3)
+				std::cout << "3. Alright,This Seems Easy :D" << std::endl;
+			else if(Difficulty==4)
+				std::cout << "4. Pro B)" << std::endl;
+
+			std::cout << std::endl;
+			Difficulty++;
+
 		}
 
 
