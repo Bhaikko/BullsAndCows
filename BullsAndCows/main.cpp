@@ -1,12 +1,11 @@
-#define _CRT_SECURE_NO_WARNINGS
+#pragma once
 #include <iostream>
 #include <stdio.h>
 #include <string>
 #include "FBullCowGame.h"
-//#include "Record.h"
 
 FBullCowGame* BCGame;
-//Record* Records;
+
 
 void PrintIntro();
 std::string GetValidGuess();

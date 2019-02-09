@@ -1,5 +1,7 @@
+#pragma once
 #include "FBullCowGame.h"
 #include <ctime>
+#include <algorithm>
 
 
 FBullCowGame::FBullCowGame(int Difficulty)
@@ -820,16 +822,31 @@ void FBullCowGame::AddScore(int Score)
 }
 
 
+bool MinimumScore(Record Record1, Record Record2)
+{
+	return Record1.GetScore() > Record2.GetScore();
+}
+
+
+void BubbleSort(Record Array[], int Size)
+{
+	int i, j;
+	for (i = 0; i < Size - 1; i++)  
+		for (j = 0; j < Size - i - 1; j++)
+			if (Array[j].GetScore() > Array[j + 1].GetScore())
+				std::swap(Array[j], Array[j + 1]);
+}
 
 void FBullCowGame::EvaluateScore(int Difficulty)
 {
-	FILE* Score;
-	Score = fopen("Record.txt", "r");
 	
+	//std::fstream Score;
+	//Score.open("Record.txt", std::ios::in | std::ios::out);
+
 	if (!Score)
 		DefaultRecord();
 
-	Score = fopen("Record.txt", "r+");
+
 	/*
 	fseek(Score, 0, SEEK_END);
 	if(ftell(Score)==0)
@@ -837,98 +854,132 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 
 	fseek(Score, 0, SEEK_SET);
 	*/
-	for (int i = 0; i < 4; i++)
-		std::fread(&Standings[i], sizeof(Standings[i]), 1 ,Score);
 
+	std::ifstream Score1;
+	Score1.open("Record.txt", std::ios::in);
+
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 5; j++)
+		{
+			Score1.read((char*)&Standings[i][j], sizeof(Standings[i][j]));
+			//Standings[i][j].ShowRecord();
+		}
+	Score1.close();
 	
-	if (Standings[Difficulty-1].top()->GetScore() < this->Score)
+	std::ofstream Score;
+	Score.open("Record.txt", std::ios::out,std::ios::_Noreplace);
+	
+	if (Standings[Difficulty-1][0].GetScore() < this->Score)
 	{
 		std::cout << "New HighScore!!!" << std::endl;
 		std::cout << "Enter Your Name" << std::endl;
-		char Name[20];
+		char Name[10];
 		std::cin >> Name;
 
-		Standings[Difficulty - 1].pop();
-		Standings[Difficulty - 1].push(new Record(Name, this->Score, Difficulty));
+		/*Record NewRecord(Name, this->Score, Difficulty);
+		//Standings[Difficulty - 1][0] = NewRecord;
+		//NewRecord.ShowRecord();
 
+
+		//std::sort(Standings[Difficulty - 1], Standings[Difficulty - 1] + 5, MinimumScore);
+
+		
+		//for (int i = 0; i < 5; i++)
+			//Standings[Difficulty - 1][i].ShowRecord();
+
+			*/
+
+		Standings[Difficulty - 1][0].ModifyRecord(Name, this->Score, Difficulty);
+		//Standings[Difficulty - 1][0].ShowRecord();
+		BubbleSort(Standings[Difficulty - 1], 5);
 
 		for (int i = 0; i < 4; i++)
-			std::fwrite(&Standings[i], sizeof(class Record), 1, Score);
+			for (int j = 0; j < 5; j++)
+			{
+				//Standings[i][j].ShowRecord();
+				Score.write((char*)&Standings[i][j], sizeof(Standings[i][j]));
+			}
+		std::cout << "SCORE WRITTEN"<<std::endl;
+			
 
 	}
 	
-	fclose(Score);
 
+	Score.close();
 	
 }
 
 void FBullCowGame::DefaultRecord()
 {
-	FILE* Score;
-
-	Score = fopen("Record.txt", "w");
+	std::ofstream Score;
+	Score.open("Record.txt");
 
 	int Difficulty = 1;
-	Record* Temp;
+	
+
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 1; j <= 5; j++)
 		{
-			char Name[] = "AAA";
-			Temp = new Record(Name, 0, Difficulty);
-			Standings[i].push(Temp);
+			char Name[10] = "AAA";
+			Record Temp(Name, 0, Difficulty);
+			Score.write((char*)&Temp, sizeof(Temp));
 
 		}
 		Difficulty++;
 	}
 
-	for (int i = 0; i < 4; i++)
-		fwrite(&Standings[i], sizeof(Standings[i]), 1, Score);
+	/*for (int i = 0; i < 4; i++)
+		for (int j = 1; j <= 5; j++)
+			Score.write((char*)&Standings[i][j-1], sizeof(Standings[i][j-1]));
+	*/		
 
 	std::cout << "DefaultRecord Written" << std::endl;
-	fclose(Score);
+
 }
 
 void FBullCowGame::ShowScore()
 {
 
-	FILE* Score;
-	Score = fopen("Record.txt", "r");
+	std::ifstream Score;
+	Score.open("Record.txt");
+
 	int Position = 1;
+
+	/*for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			Score.read((char*)&Standings[i][j], sizeof(class Record));
+		}
+	}
 
 	for(int i=0;i<4;i++)
 	{
 		std::cout << "########################" << std::endl;
-		std::priority_queue<Record*, std::vector<Record*>, MinScore> Current;
-		std::fread(&Current, sizeof(class Record), 1,  Score);
 
-		std::stack<Record*>* Records = new std::stack<Record*>;
-		
-		while (!Current.empty())
+		for (int j = 0; j < 5; j++)
 		{
-			Records->push(Current.top());
-			Current.pop();
+			
+			
+			std::cout << Position++ << std::endl;
 
-		}
-		while (!Records->empty())
-		{
-			std::cout << Position++ << "." << std::endl;
-			Records->top()->ShowRecord();
-			Current.push(Records->top());
-			Records->pop();
+			Standings[i][j].ShowRecord();
+
 		}
 		std::cout << std::endl;
 		Position = 1;
 
-	}
+	}*/
+
+	Record Current;
+	while (Score.read((char*)&Current, sizeof(Current)))
+		Current.ShowRecord();
 	
 	std::cout << "########################" << std::endl;
 
 
 }
-
-
-
 
 void FBullCowGame::DeleteRecord()
 {

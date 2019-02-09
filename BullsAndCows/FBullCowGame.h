@@ -4,9 +4,8 @@
 #include "Record.h"
 #include<map>
 #include <fstream>
-#include <queue>
 #include <vector>
-#include <stack>
+
 
 
 struct FBullCowCount
@@ -27,13 +26,14 @@ enum class EWordStatus
 	Not_Lowercase
 };
 
-struct MinScore
+/*struct MinScore
 {
 	bool operator()(Record* Record1, Record* Record2)
 	{
 		return Record1->GetScore() > Record2->GetScore();
 	}
-};
+};*/
+
 
 class FBullCowGame
 {
@@ -47,7 +47,9 @@ private:
 	FWord* Words[4][26];
 	FWord* GameWords[5];
 	FWord* HiddenWord;
-	std::priority_queue<Record*, std::vector<Record*>, MinScore> Standings[4];
+	//std::priority_queue<Record*, std::vector<Record*>, MinScore> Standings[4];
+
+	Record Standings[4][5];
 
 	bool IsIsogram(std::string) const;
 	bool IsLowercase(std::string) const;
