@@ -114,9 +114,10 @@ void PrintIntro()
 	std::cout << "2. High Scores" << std::endl;
 	std::cout << "3. Help" << std::endl;
 	std::cout << "4. Credits" << std::endl;
-	std::cout << "5. Delete Record" << std::endl;
+	std::cout << "5. Reset Score" << std::endl;
 	std::cout << "6. Exit" << std::endl;
 	std::cout << "Press Corresponding Numbers For Selecting Options" << std::endl;
+	std::cout << std::endl;
 	std::cout << "If You Are Playing For First Time Then Do Mind Checking Help" << std::endl;
 	
 

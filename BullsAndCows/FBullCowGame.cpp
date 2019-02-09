@@ -849,9 +849,8 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 
 	for (int i = 0; i < 4; i++)
 		for (int j = 0; j < 5; j++)
-		{
 			Score1.read((char*)&Standings[i][j], sizeof(Standings[i][j]));
-		}
+		
 	Score1.close();
 	
 	std::ofstream Score;
@@ -894,18 +893,12 @@ void FBullCowGame::DefaultRecord()
 			char Name[10] = "AAA";
 			Record Temp(Name, 0);
 			Score.write((char*)&Temp, sizeof(Temp));
-			std::cout << "YO" << std::endl;
+			
 
 		}
 		Difficulty++;
 	}
 
-	/*for (int i = 0; i < 4; i++)
-		for (int j = 1; j <= 5; j++)
-			Score.write((char*)&Standings[i][j-1], sizeof(Standings[i][j-1]));
-	*/		
-
-	std::cout << "DefaultRecord Written" << std::endl;
 
 }
 
@@ -917,31 +910,7 @@ void FBullCowGame::ShowScore()
 
 	int Position = 1;
 	int Difficulty = 1;
-	/*for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			Score.read((char*)&Standings[i][j], sizeof(class Record));
-		}
-	}
 
-	for(int i=0;i<4;i++)
-	{
-		std::cout << "########################" << std::endl;
-
-		for (int j = 0; j < 5; j++)
-		{
-			
-			
-			std::cout << Position++ << std::endl;
-
-			Standings[i][j].ShowRecord();
-
-		}
-		std::cout << std::endl;
-		Position = 1;
-
-	}*/
 
 	std::cout << "########################" << std::endl;
 	std::cout << "1. Noob :(" << std::endl;
