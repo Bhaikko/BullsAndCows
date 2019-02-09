@@ -13,10 +13,6 @@ int Difficulty();
 void Help();
 void Credits();
 
-void Debug()
-{
-	std::cout << "Inside" << std::endl;
-}
 
 void ChoiceInput()
 {
@@ -72,7 +68,7 @@ void PlayGame(int Difficulty)
 		else
 		{
 			FBullCowCount Result = BCGame->SubmitValidGuess(Guess);
-			std::cout << "Bull: " << Result.Bulls << " Cows: " << Result.Cows << std::endl;
+			std::cout << "Bulls: " << Result.Bulls << " Cows: " << Result.Cows << std::endl;
 		}
 		std::cout << std::endl;
 
@@ -82,7 +78,6 @@ void PlayGame(int Difficulty)
 	std::cout << "Press 9 For Menu." << std::endl;
 	ChoiceInput();
 	
-
 }
 
 void IntroArt()

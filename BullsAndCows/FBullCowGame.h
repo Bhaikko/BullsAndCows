@@ -7,15 +7,11 @@
 #include <vector>
 
 
-
 struct FBullCowCount
 {
 	int Bulls = 0;
 	int Cows = 0;
 };
-
-
-
 
 enum class EWordStatus
 {
@@ -25,15 +21,6 @@ enum class EWordStatus
 	Wrong_Length,
 	Not_Lowercase
 };
-
-/*struct MinScore
-{
-	bool operator()(Record* Record1, Record* Record2)
-	{
-		return Record1->GetScore() > Record2->GetScore();
-	}
-};*/
-
 
 class FBullCowGame
 {
@@ -47,7 +34,6 @@ private:
 	FWord* Words[4][26];
 	FWord* GameWords[5];
 	FWord* HiddenWord;
-	//std::priority_queue<Record*, std::vector<Record*>, MinScore> Standings[4];
 
 	Record Standings[4][5];
 
@@ -63,7 +49,6 @@ private:
 public:
 	FBullCowGame(int Difficulty);
 	
-	//Getters
 	int GetMaxTries() const;
 	int GetCurrentTry() const;
 	int GetHiddenWordLength() const;

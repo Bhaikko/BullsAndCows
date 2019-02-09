@@ -872,7 +872,6 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 				Score.write((char*)&Standings[i][j], sizeof(Standings[i][j]));			
 
 	}
-	
 
 	Score.close();
 	
@@ -898,8 +897,6 @@ void FBullCowGame::DefaultRecord()
 		}
 		Difficulty++;
 	}
-
-
 }
 
 void FBullCowGame::ShowScore()
@@ -911,12 +908,10 @@ void FBullCowGame::ShowScore()
 	int Position = 1;
 	int Difficulty = 1;
 
-
 	std::cout << "########################" << std::endl;
 	std::cout << "1. Noob :(" << std::endl;
 	Difficulty++;
 	
-
 	Record Current;
 	while (Score.read((char*)&Current, sizeof(Current)))
 	{
@@ -939,17 +934,13 @@ void FBullCowGame::ShowScore()
 			Difficulty++;
 
 		}
-
-
 	}
-
 }
 
 void FBullCowGame::DeleteRecord()
 {
 	std::cout << "Record Deleted" << std::endl;
 	std::remove("Record.dat");
-
 }
 
 int FBullCowGame::ReturnCurrentScore()
