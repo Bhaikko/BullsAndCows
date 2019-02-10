@@ -147,6 +147,7 @@ void PrintIntro()
 		break;
 
 	case 6:
+		std::cout << "Thanks For Playing :D" << std::endl;
 		exit(0);
 		return;
 

@@ -25,15 +25,46 @@ FBullCowGame::FBullCowGame(int Difficulty)
 	return;
 }
 
+void GenerateNumbers(int Numbers[], int Size)
+{
+	int Num = std::rand() % 26;
+	if (Size == 0)
+		return;
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (Numbers[i] == Num)
+		{
+			GenerateNumbers(Numbers, Size);
+			return;
+		}
+	}
+	Numbers[Size - 1] = Num;
+
+	GenerateNumbers(Numbers, Size - 1);
+}
+
 void FBullCowGame::GenerateWord(int Difficulty)
 {	
 	int WordIndex;
+	
+	int Numbers[5];
+	for (int i = 0; i < 5; i++)
+		Numbers[i] = -1;
+
 	std::srand(time(NULL));
+	GenerateNumbers(Numbers, 5);
+
+	for (int i = 0; i < 5; i++)
+		GameWords[i] = Words[Difficulty - 1][Numbers[i]];
+
+	/*
 	for (int i = 0; i < 5; i++)
 	{
 		WordIndex = std::rand() % 26;
 		GameWords[i] = Words[Difficulty - 1][WordIndex];
 	}
+	*/
 	
 
 }
@@ -860,7 +891,7 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 	{
 		std::cout << "New HighScore!!!" << std::endl;
 		std::cout << "Enter Your Name" << std::endl;
-		char Name[10];
+		char Name[20];
 		std::cin >> Name;
 
 
@@ -889,7 +920,7 @@ void FBullCowGame::DefaultRecord()
 	{
 		for (int j = 1; j <= 5; j++)
 		{
-			char Name[10] = "AAA";
+			char Name[20] = "AAA";
 			Record Temp(Name, 0);
 			Score.write((char*)&Temp, sizeof(Temp));
 			

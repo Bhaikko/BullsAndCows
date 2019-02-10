@@ -22,7 +22,7 @@ void Record::ShowRecord()
 	std::cout << "Score: " << Score << std::endl;
 }
 
-void Record::ModifyRecord(char Name[10], int Score)
+void Record::ModifyRecord(char Name[20], int Score)
 {
 	strcpy(this->Name, Name);
 	this->Score = Score;

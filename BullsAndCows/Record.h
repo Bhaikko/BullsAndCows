@@ -7,7 +7,7 @@
 class Record
 {
 private:
-	char Name[10];
+	char Name[20];
 	int Score;
 	
 public:
@@ -16,6 +16,6 @@ public:
 	int GetScore();
 	
 	void ShowRecord();
-	void ModifyRecord(char Name[10], int Score);
+	void ModifyRecord(char Name[20], int Score);
 };
 
