@@ -133,26 +133,26 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "ash";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "'I was chokin' in the crowd,\n Building my rain up in the cloud,\n Falling like --- to the ground\n--Imagine Dragons,Believer'";
+	Words[Row][Col]->Hint = "'I Was Chokin' In The Crowd,\nBuilding My Rain Up In The Cloud,\nFalling Like --- To The Ground'\n--Believer, Imagine Dragons";
 	Words[Row][Col]->Award = "Did You Know?! Ash Ketchum From Pokemon Is Known As Satoshi In Japan";
 	Col++;
 
 	Words[Row][Col]->Word = "ego";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Reciprocal Of Knowledge";
-	Words[Row][Col]->Award = "Did You Know?! Ego Starts To Develop in human when he/she is only 3 years old";
+	Words[Row][Col]->Award = "Did You Know?! Ego Starts To Develop In Human Ehen He/She Is Only 3 Years Old";
 	Col++;
 
 	Words[Row][Col]->Word = "god";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "'You Don't Fuck With The ---'\n-Mundus, Devil May Cry";
+	Words[Row][Col]->Hint = "'You Don't Fuck With The ---'\n-Mundus, DMC Devil May Cry 2013";
 	Words[Row][Col]->Award = "Who Am I To Write A Fact About God Anyway";
 	Col++;
 
 	Words[Row][Col]->Word = "jam";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Bread And ---";
-	Words[Row][Col]->Award = "Did You Know?! Jam neither is Considered as Solid nor Liquid but Condiment";
+	Words[Row][Col]->Award = "Did You Know?! Jam Neither Is Considered As Solid Nor Liquid But Condiment";
 	Col++;
 
 	Words[Row][Col]->Word = "air";
@@ -163,80 +163,80 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "oil";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Hair---, we apply it on our Hair";
-	Words[Row][Col]->Award = "Did You know?! Only 50% Of Crude oil is converted into fuel";
+	Words[Row][Col]->Hint = "Hair---, We Apply It On Our Hair";
+	Words[Row][Col]->Award = "Did You know?! Only 50% Of Crude Oil Is Converted Into Fuel";
 	Col++;
 
 	Words[Row][Col]->Word = "art";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "class 12 stream Humanities other name but without 's' in the end";
-	Words[Row][Col]->Award = "Did You Know?! Art used to be an olmypic event";
+	Words[Row][Col]->Hint = "Grade 12 Stream 'Humanities' Other Name Without 's' In The End";
+	Words[Row][Col]->Award = "Did You Know?! Art Used To Be An Olmypic Event";
 	Col++;
 
 	Words[Row][Col]->Word = "git";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "---hub, software engineer's hub where they share source codes";
-	Words[Row][Col]->Award = "Git Comfortable with using Git, Git it??";
+	Words[Row][Col]->Hint = "---hub, Software Engineer's Hub Where They Share Source Codes";
+	Words[Row][Col]->Award = "Git Comfortable With Using Git, Git It??";
 	Col++;
 
 	Words[Row][Col]->Word = "get";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "--- set go!!";
-	Words[Row][Col]->Award = "Did You Know?! go is the smallest sentence one could make";
+	Words[Row][Col]->Hint = "--- Set Go!!";
+	Words[Row][Col]->Award = "Did You Know?! Go Is The Smallest Sentence One Could Make";
 	Col++;
 
 	Words[Row][Col]->Word = "rat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Very legendary, that’s some matter-of-fact shit,\nYou're the opposite of stars like '---' spelled backwards\n--Lift Off,Mike Shinoda";
-	Words[Row][Col]->Award = "Did You Know?! Rats take care of injured and sick rats in their group.";
+	Words[Row][Col]->Hint = "Very Legendary, That’s Some Matter-Of-Fact Shit,\nYou're The Opposite Of Stars Like --- Spelled Backwards\n--Lift Off,Mike Shinoda";
+	Words[Row][Col]->Award = "Did You Know?! Rats Take Care Of Injured And Sick Rats In Their Group.";
 	Col++;
 
 	Words[Row][Col]->Word = "sat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "shortform used for saturday";
-	Words[Row][Col]->Award = "Did You Know?! Saturday takes it name from Saturn, the Roman god of generation,dissolution,plenty,wealth and liberation";
+	Words[Row][Col]->Hint = "Shortform Used For Saturday";
+	Words[Row][Col]->Award = "Did You Know?! Saturday Takes It Name From Saturn, The Roman God Of Generation, Dissolution, Plenty, Wealth And Liberation";
 	Col++;
 
 	Words[Row][Col]->Word = "gum";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Chewing ---";
-	Words[Row][Col]->Award = "Did You Know?! Kids in North America spend approximately half a billion dollars on bubble gum every year";
+	Words[Row][Col]->Award = "Did You Know?! Kids In North America Spend Approximately Half A Billion Dollars On Bubble Gum Every Year";
 	Col++;
 
 	Words[Row][Col]->Word = "mug";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Coffee ---";
-	Words[Row][Col]->Award = "Did You Know?! Coffee dates back to 800AD";
+	Words[Row][Col]->Award = "Did You Know?! Coffee Dates Back To 800AD";
 	Col++;
 
 	Words[Row][Col]->Word = "tar";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Used To Make Roads, sticky substance";
-	Words[Row][Col]->Award = "Did You Know?! The last puffs on a cigarette can contain as much as twice the amount of tar as the first puffs";
+	Words[Row][Col]->Hint = "Used To Make Roads, Sticky Substance";
+	Words[Row][Col]->Award = "Did You Know?! The Last Puffs On A Cigarette Can Contain As Much As Twice The Amount Of Tar As The First Puffs";
 	Col++;
 
 	Words[Row][Col]->Word = "gym";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "1st January its Full,2nd January no one shows up";
-	Words[Row][Col]->Award = "Google+ is the gym of social networking, We all join, but nobody actually uses it. LAUGH GOD DAMNIT";
+	Words[Row][Col]->Hint = "1st January Its Full,2nd January No One Shows Up";
+	Words[Row][Col]->Award = "Google+ Is The Gym Of Social Networking, We All Join, But Nobody Actually Uses It. LAUGH GOD DAMNIT";
 	Col++;
 
 	Words[Row][Col]->Word = "gay";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "My Roommate Loves me, Who is he??";
-	Words[Row][Col]->Award = "Gay Actually means 'Happy', I read it in my 7 standard english textbook";
+	Words[Row][Col]->Hint = "My Roommate Loves Me, Who Is He??";
+	Words[Row][Col]->Award = "Gay Actually Means 'Happy', I Read It In My 7 Grade English Textbook";
 	Col++;
 
 	Words[Row][Col]->Word = "gun";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "I'm sorry for everything, Oh, everything I've done,\n From the second that I was born it seems I had a loaded ___,\n And then I shot, shot, shot a hole through everything I loved";
-	Words[Row][Col]->Award = "Did You Know?! Approximately 20% of gun owners own 65% of the guns";
+	Words[Row][Col]->Hint = "I'm Sorry For Everything, Oh, Everything I've Done,\nFrom The Second That I Was Born It Seems I Had A Loaded ---,\nAnd Then I Shot, Shot, Shot A Hole Through Everything I Loved.\n---Shots, Imagine Dragons";
+	Words[Row][Col]->Award = "Did You Know?! Every Day, 7 Children Are Killed And 12 More Are Injured With A Gun";
 	Col++;
 
 	Words[Row][Col]->Word = "zig";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "--- zag";
-	Words[Row][Col]->Award = "I litreally gave up at this word for thinking a fact for zig zag, i mean come on, i have to hard code 4(Difficulty)*26(words) description";
+	Words[Row][Col]->Award = "I Literally Gave Up At This Word For Thinking A Fact For Zig Zag, I Mean Come On, I Have To Hard Code 4(Difficulty)*26(Words) Description";
 	Col++;
 
 
@@ -247,7 +247,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "arms";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Fore----";
-	Words[Row][Col]->Award = "Did You Know?! The bone in your upper arm is called the funny bone";
+	Words[Row][Col]->Award = "Did You Know?! The Bone In Your Upper Arm Is Called The Funny Bone";
 	Col++;
 
 	Words[Row][Col]->Word = "mars";
@@ -259,92 +259,92 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "pair";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "---- Of Shoes";
-	Words[Row][Col]->Award = "Did You Know?! Sneakers Got Their Name Because their Soles doesn't make Noise";
+	Words[Row][Col]->Award = "Did You Know?! Sneakers Got Their Name Because their Soles Doesn't Make Noise";
 	Col++;
 
 	Words[Row][Col]->Word = "duck";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "My Autocorrect Changed F*ck To ----";
-	Words[Row][Col]->Award = "Did You Know?! A male duck is called a drake, a female duck a hen, and a baby duck a duckling";
+	Words[Row][Col]->Award = "Did You Know?! A Male Duck Is Called A Drake, A Female Duck A Hen, And A Baby Duck A Duckling";
 	Col++;
 
 	Words[Row][Col]->Word = "bios";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "A set of computer instructions in firmware which control input and output operations.";
-	Words[Row][Col]->Award = "Did You Know?! BIOS stands for Basic Input Output System";
+	Words[Row][Col]->Hint = "A Set Of Computer Instructions In Firmware Which Control Input And Output Operations.";
+	Words[Row][Col]->Award = "Did You Know?! BIOS Stands For Basic Input Output System";
 	Col++;
 
 
 	Words[Row][Col]->Word = "brag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "He Keeps ----ing About His Acheivements";
-	Words[Row][Col]->Award = "Did You Know?! Brag is a gambling card game which is a simplified form of poker";
+	Words[Row][Col]->Award = "Did You Know?! Brag Is A Gambling Card Game Which Is A Simplified Form Of Poker";
 	Col++;
 
 	Words[Row][Col]->Word = "grab";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Go g--- some food.";
-	Words[Row][Col]->Award = "Did You Know?! Apples are more effective than coffee at waking you up at morning, Just A Food Fact";
+	Words[Row][Col]->Hint = "Go g--- Some Food.";
+	Words[Row][Col]->Award = "Did You Know?! Apples Are More Effective Than Coffee At Waking You Up At Morning, Just A Food Fact";
 	Col++;
 
 	Words[Row][Col]->Word = "bags";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "A flexible container with an opening at the top, used for carrying things.";
-	Words[Row][Col]->Award = "Did You Know?! 160,000 plastic bags are used globally every second!";
+	Words[Row][Col]->Hint = "A Flexible Container With An Opening At The Top, Used For Carrying Things.";
+	Words[Row][Col]->Award = "Did You Know?! 160,000 Plastic Bags Are Used Globally Every Second!";
 	Col++;
 
 	Words[Row][Col]->Word = "corn";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "A Popcorn Ancestor";
-	Words[Row][Col]->Award = "Did You Know?! Americans eat around 17 billion quarts of popcorn every year";
+	Words[Row][Col]->Award = "Did You Know?! Americans Eat Around 17 Billion Quarts Of Popcorn Every Year";
 	Col++;
 
 	Words[Row][Col]->Word = "coin";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Bit----";
-	Words[Row][Col]->Award = "Did You Know?! Most coins can circulate for about 25 years before they become too worn to be used anymore.";
+	Words[Row][Col]->Award = "Did You Know?! Most Coins Can Circulate For About 25 Years Before They Become Too Worn To Be Used Anymore.";
 	Col++;
 
 	Words[Row][Col]->Word = "drag";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "----Race, Race with Gear Shifting Only in Need For Speed ";
-	Words[Row][Col]->Award = "Did You Know?! Drag Races are for those who are afraid of turns.";
+	Words[Row][Col]->Hint = "----race, Race with Gear Shifting Only in Need For Speed ";
+	Words[Row][Col]->Award = "Did You Know?! Drag Races Are For Those Who Are Afraid Of Turns.";
 	Col++;
 
 	Words[Row][Col]->Word = "modi";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Our Prime Minister Last Name";
-	Words[Row][Col]->Award = "Did You Know?! After President Obama, Narendra Modi is the world’s most followed leader on Twitter, accounting more than 12 million followers.";
+	Words[Row][Col]->Hint = "Indian Prime Minister Last Name";
+	Words[Row][Col]->Award = "Did You Know?! After President Obama, Narendra Modi Is The World’S Most Followed Leader On Twitter, Accounting More Than 12 Million Followers.";
 	Col++;
 
 	Words[Row][Col]->Word = "farm";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "An area of land and its buildings, used for growing crops and rearing animals.";
-	Words[Row][Col]->Award = "Did You Know?! Each American farmer produces food and fiber for 165 people annually, both in the U.S. and abroad.";
+	Words[Row][Col]->Hint = "An Area Of Land And Its Buildings, Used For Growing Crops And Rearing Animals.";
+	Words[Row][Col]->Award = "Did You Know?! Each American Farmer Produces Food And Fiber For 165 People Annually, Both In The U.S. And Abroad.";
 	Col++;
 
 	Words[Row][Col]->Word = "form";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "A word with the same meaning as another formed by removing one or more of the syllables of the longer word";
-	Words[Row][Col]->Award = "Did You Know?! Computer Stands For Common Operating Machine Particularly used for Technological Engineering Research.";
+	Words[Row][Col]->Hint = "Shortf---";
+	Words[Row][Col]->Award = "Did You Know?! Computer Stands For Common Operating Machine Particularly Used for Technological Engineering Research.";
 	Col++;
 
 	Words[Row][Col]->Word = "sofa";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Another Name For Couch";
-	Words[Row][Col]->Award = "Did You Know?!  The word ‘sofa’ dates back to 2000BC Egypt and derives from the Arabic word ‘suffah’ which loosely translates as ‘bench’.";
+	Words[Row][Col]->Award = "Did You Know?!  The Word ‘Sofa’ Dates Back To 2000Bc Egypt And Derives From The Arabic Word ‘Suffah’ Which Loosely Translates As ‘Bench’.";
 	Col++;
 
-	Words[Row][Col]->Word = "song";
+	Words[Row][Col]->Word = "band";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Linkin Park ---- are Best";
+	Words[Row][Col]->Hint = "Linkin Park Is A Rap Metallic Alternative ----.";
 	Words[Row][Col]->Award = "RIP Chester Bennington(1976-2017)";
 	Col++;
 
 	Words[Row][Col]->Word = "shit";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Bull----!!!";
-	Words[Row][Col]->Award = "Did You Know?! Buzz Aldrin was the second man on the moon... and he was also the first man to ever poop in space.";
+	Words[Row][Col]->Award = "Did You Know?! Buzz Aldrin Was The Second Man On The Moon... And He Was Also The First Man To Ever Poop In Space.";
 	Col++;
 
 	Words[Row][Col]->Word = "ribs";
@@ -355,20 +355,20 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "ramp";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "GTA Vice City Had ----ages where you kill gand members with weapons.";
-	Words[Row][Col]->Award = "Did You Know?! GTA Vice City is loosely based on the movie Scarface.";
+	Words[Row][Col]->Hint = "GTA Vice City Had ----Ages Where You Kill Bunch Of Gang Members With Weapons.";
+	Words[Row][Col]->Award = "Did You Know?! GTA Vice City Is Loosely Based On The Movie Scarface.";
 	Col++;
 
 	Words[Row][Col]->Word = "vice";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "---- President";
-	Words[Row][Col]->Award = "Did You Know?! 14 US vice presidents have become president, 8 because the president died in office, and 1 because the president resigned.";
+	Words[Row][Col]->Award = "Did You Know?! 14 US Vice Presidents Have Become President, 8 Because The President Died In Office, And 1 Because The President Resigned.";
 	Col++;
 
 	Words[Row][Col]->Word = "rims";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Part Of A Wheel";
-	Words[Row][Col]->Award = "Did You Know?! A wheel with teeth is called a gear.";
+	Words[Row][Col]->Award = "Did You Know?! A Wheel With Teeth Is Called A Gear.";
 	Col++;
 
 	Words[Row][Col]->Word = "sort";
@@ -379,8 +379,8 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "goat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Capra aegagrus hircus, It's Scientific Name";
-	Words[Row][Col]->Award = "Did You Know?! Goat Simulator has made more than $12 million in revenue";
+	Words[Row][Col]->Hint = "Capra Aegagrus Hircus, It's Scientific Name";
+	Words[Row][Col]->Award = "Did You Know?! Goat Simulator Has Made More Than $12 Million In Revenue";
 	Col++;
 
 	Words[Row][Col]->Word = "visa";
@@ -414,7 +414,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "brags";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "The Way He Won That Game, He Always b---- About It.";
-	Words[Row][Col]->Award = "Did You Know ? !Brag is a gambling card game which is a simplified form of poker";
+	Words[Row][Col]->Award = "Did You Know?! Brag Is A Gambling Card Game Which Is A Simplified Form Of Poker";
 	Col++;
 
 	Words[Row][Col]->Word = "cigar";
@@ -426,13 +426,13 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "coins";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Bit----s";
-	Words[Row][Col]->Award = "Did You Know?! Most coins can circulate for about 25 years before they become too worn to be used anymore.";
+	Words[Row][Col]->Award = "Did You Know?! Most Coins Can Circulate For About 25 Years Before They Become Too Worn To Be Used Anymore.";
 	Col++;
 
 	Words[Row][Col]->Word = "corns";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Popcorns Ancestor";
-	Words[Row][Col]->Award = "Did You Know?! Americans eat around 17 billion quarts of popcorn every year";
+	Words[Row][Col]->Award = "Did You Know?! Americans Eat Around 17 Billion Quarts Of Popcorn Every Year";
 	Col++;
 
 
@@ -457,7 +457,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "drags";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "----Race, Race with Gear Shifting Only in Need For Speed ";
-	Words[Row][Col]->Award = "Did You Know?! Drag Races are for those who are afraid of turns.";
+	Words[Row][Col]->Award = "Did You Know?! Drag Races Are For Those Who Are Afraid Of Turns.";
 	Col++;
 
 	Words[Row][Col]->Word = "radio";
@@ -499,7 +499,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "moral";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "m---- Values And Ethics";
-	Words[Row][Col]->Award = "Did You Know?! Moral Values And Ethics Is Served As A Subject In Engineering";
+	Words[Row][Col]->Award = "Did You Know?! Moral Values And Ethics Is Taught As A Subject In Engineering";
 	Col++;
 
 	Words[Row][Col]->Word = "human";
@@ -540,19 +540,19 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "ramps";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "GTA Vice City Had ----(s)ages where you kill gand members with weapons.";
-	Words[Row][Col]->Award = "Did You Know?! GTA Vice City is loosely based on the movie Scarface.";
+	Words[Row][Col]->Hint = "GTA Vice City Had ----(s)ages Where You Kill Bunch Of Gang Members With Weapons.";
+	Words[Row][Col]->Award = "Did You Know?! GTA Vice City Is Loosely Based On The Movie Scarface.";
 	Col++;
 
 	Words[Row][Col]->Word = "armor";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "I Hear My Battle Symphony,/n All The World In Front Of Me,\nIf My ---- Breaks,\n I'll Fuse It Back Together,\n -- Battle Symphony, Linkin Park";
+	Words[Row][Col]->Hint = "I Hear My Battle Symphony,/nAll The World In Front Of Me,\nIf My ---- Breaks,\nI'll Fuse It Back Together,\n-- Battle Symphony, Linkin Park";
 	Words[Row][Col]->Award = "Did You Know?! Knights Had To Practice Putting On And Wearing Their Armor.";
 	Col++;
 
 	Words[Row][Col]->Word = "visor";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Sometimes Wore By Tennis Players";
+	Words[Row][Col]->Hint = "Sometimes Wore By Tennis Players As Cap";
 	Words[Row][Col]->Award = "Did You Know?! Yellow Tennis Balls Were Used At Wimbledon For The First Time In 1986";
 	Col++;
 
@@ -593,7 +593,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "egoism";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Reciprocal Of Knowledge: ---ism";
-	Words[Row][Col]->Award = "If You Are At This Difficulty,It'll Take You Decades To Play At Pro";
+	Words[Row][Col]->Award = "Did You Know?! Ego Starts To Develop In Human When He/She Is Only 3 Years Old.";
 	Col++;
 
 	Words[Row][Col]->Word = "forearm";
@@ -889,11 +889,12 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 	
 	if (Standings[Difficulty-1][4].GetScore() < this->Score)
 	{
+		std::cout << "##################" << std::endl;
 		std::cout << "New HighScore!!!" << std::endl;
+		std::cout << "##################" << std::endl;
 		std::cout << "Enter Your Name" << std::endl;
 		char Name[20];
 		std::cin >> Name;
-
 
 		Standings[Difficulty - 1][4].ModifyRecord(Name, this->Score);
 		BubbleSort(Standings[Difficulty - 1], 5);

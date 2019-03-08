@@ -16,19 +16,16 @@ void Credits();
 
 void ChoiceInput()
 {
-	int Choice;
+	char Choice;
 	do
 	{
 		std::cin >> Choice;
-		if (Choice == 9)
+		if (Choice == '9')
 		{
 			PrintIntro();
 			return;
 		}
-		else
-			std::cout << "ENTER VALID INPUT!!!!,DAMNIT" << std::endl;
-
-	} while (Choice != 9);
+	} while (Choice != '9');
 }
 
 void PlayGame(int Difficulty)
@@ -37,7 +34,7 @@ void PlayGame(int Difficulty)
 	
 	int CurrentLevel = 1;
 	bool bWordShown = false;
-	while(CurrentLevel<=5&&BCGame->GetCurrentTry()<BCGame->GetMaxTries())
+	while(CurrentLevel<=5&&BCGame->GetCurrentTry()<=BCGame->GetMaxTries())
 	{
 		if (!bWordShown)
 		{
@@ -61,7 +58,8 @@ void PlayGame(int Difficulty)
 		}
 		else if (BCGame->GetCurrentTry() == BCGame->GetMaxTries())
 		{
-			std::cout << "The Word Is" << BCGame->GetCurrentWord()->Word << std::endl;
+			std::cout << std::endl << std::endl;
+			std::cout << "The Word Is : " << BCGame->GetCurrentWord()->Word << std::endl;
 			std::cout << "Better Luck Next Time" << std::endl;
 			break;
 		}
@@ -73,7 +71,7 @@ void PlayGame(int Difficulty)
 		std::cout << std::endl;
 
 	}	
-	std::cout << "Your Score: " << BCGame->ReturnCurrentScore() << std::endl;
+	std::cout << "Your Score: " << BCGame->ReturnCurrentScore() << std::endl << std::endl;
 	BCGame->EvaluateScore(Difficulty);
 	std::cout << "Press 9 For Menu." << std::endl;
 	ChoiceInput();
@@ -116,37 +114,37 @@ void PrintIntro()
 	std::cout << "If You Are Playing For First Time Then Do Mind Checking Help" << std::endl;
 	
 
-	int Choice;
+	char Choice;
 	std::cin >> Choice;
-
+	
 	int GameDifficulty;
 	switch (Choice)
 	{
-	case 1:
+	case '1':
 		GameDifficulty = Difficulty();
 		BCGame = new FBullCowGame(GameDifficulty);		
 		PlayGame(GameDifficulty);
 		break;
 
-	case 2:
+	case '2':
 		BCGame->ShowScore();
 		std::cout << "Press 9 For Menu" << std::endl;
 		ChoiceInput();
 		break;
 
-	case 3:
+	case '3':
 		Help();
 		break;
 
-	case 4:
+	case '4':
 		Credits();
 		break;
 
-	case 5:
+	case '5':
 		BCGame->DeleteRecord();
 		break;
 
-	case 6:
+	case '6':
 		std::cout << "Thanks For Playing :D" << std::endl;
 		exit(0);
 		return;
@@ -217,7 +215,11 @@ int Difficulty()
 	std::cout << "3. Alright,This Seems Easy :D" << std::endl;
 	std::cout << "4. Pro B)" << std::endl;
 
-	std::cin >> Choice;
+	do
+	{
+		std::cin >> Choice;
+	} while (Choice != 1 && Choice != 2 && Choice != 3 && Choice != 4); 
+	
 	return Choice;
 
 }
