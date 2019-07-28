@@ -86,6 +86,7 @@ StyleCopReport.xml
 *.scc
 *.txt
 *.dat
+*.out
 
 # Chutzpah Test files
 _Chutzpah*
