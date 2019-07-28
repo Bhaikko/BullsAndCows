@@ -187,7 +187,7 @@ void FBullCowGame::DataInitialisation()
 
 	Words[Row][Col]->Word = "rat";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
-	Words[Row][Col]->Hint = "Very Legendary, That’s Some Matter-Of-Fact Shit,\nYou're The Opposite Of Stars Like --- Spelled Backwards\n--Lift Off,Mike Shinoda";
+	Words[Row][Col]->Hint = "Very Legendary, Thatï¿½s Some Matter-Of-Fact Shit,\nYou're The Opposite Of Stars Like --- Spelled Backwards\n--Lift Off,Mike Shinoda";
 	Words[Row][Col]->Award = "Did You Know?! Rats Take Care Of Injured And Sick Rats In Their Group.";
 	Col++;
 
@@ -314,7 +314,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "modi";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Indian Prime Minister Last Name";
-	Words[Row][Col]->Award = "Did You Know?! After President Obama, Narendra Modi Is The World’S Most Followed Leader On Twitter, Accounting More Than 12 Million Followers.";
+	Words[Row][Col]->Award = "Did You Know?! After President Obama, Narendra Modi Is The Worldï¿½S Most Followed Leader On Twitter, Accounting More Than 12 Million Followers.";
 	Col++;
 
 	Words[Row][Col]->Word = "farm";
@@ -332,7 +332,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "sofa";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "Another Name For Couch";
-	Words[Row][Col]->Award = "Did You Know?!  The Word ‘Sofa’ Dates Back To 2000Bc Egypt And Derives From The Arabic Word ‘Suffah’ Which Loosely Translates As ‘Bench’.";
+	Words[Row][Col]->Award = "Did You Know?!  The Word ï¿½Sofaï¿½ Dates Back To 2000Bc Egypt And Derives From The Arabic Word ï¿½Suffahï¿½ Which Loosely Translates As ï¿½Benchï¿½.";
 	Col++;
 
 	Words[Row][Col]->Word = "band";
@@ -451,7 +451,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "scams";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "An Illegal Plan For Making Money, Especially One That Involves tricking people.";
-	Words[Row][Col]->Award = "Did You Know?! Nigerian Scammer Sold Fake Airport For £242 Million To International Bank";
+	Words[Row][Col]->Award = "Did You Know?! Nigerian Scammer Sold Fake Airport For ï¿½242 Million To International Bank";
 	Col++;
 
 	Words[Row][Col]->Word = "drags";
@@ -647,7 +647,7 @@ void FBullCowGame::DataInitialisation()
 	Words[Row][Col]->Word = "manors";
 	Words[Row][Col]->WordLength = Words[Row][Col]->Word.length();
 	Words[Row][Col]->Hint = "A Large Country House With Lands";
-	Words[Row][Col]->Award = "Did You Know?! 'The Manor’ Is the Second Most Expensive Home In Ihe Country";
+	Words[Row][Col]->Award = "Did You Know?! 'The Manorï¿½ Is the Second Most Expensive Home In Ihe Country";
 	Col++;
 
 	Words[Row][Col]->Word = "organs";
@@ -884,8 +884,16 @@ void FBullCowGame::EvaluateScore(int Difficulty)
 		
 	Score1.close();
 	
-	std::ofstream Score;
-	Score.open("Record.dat", std::ios::out,std::ios::_Noreplace);
+	// std::ofstream Score;
+	// Score.open("Record.dat", std::ios::out,std::ios::_Noreplace);
+	std::fstream Score("Record.dat", std::ios::in);
+	if(!Score)
+	{
+		Score.open("Record.dat", std::ios::out);
+		Score.close();
+	}
+	Score.close();
+	Score.open("Record.dat", std::ios::in | std::ios::out);
 	
 	if (Standings[Difficulty-1][4].GetScore() < this->Score)
 	{
